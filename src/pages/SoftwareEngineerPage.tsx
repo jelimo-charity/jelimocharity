@@ -91,22 +91,18 @@ const SoftwareEngineerPage = () => {
       {/* Skills Section */}
       <section className="container mx-auto px-6 py-12 max-w-4xl">
         <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Technical Skills</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="space-y-6">
           {skills.map((skillCategory) => (
-            <Card key={skillCategory.category} className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-lg">{skillCategory.category}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skillCategory.items.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="text-xs">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            <div key={skillCategory.category} className="space-y-3">
+              <h3 className="text-lg font-semibold text-foreground">{skillCategory.category}</h3>
+              <div className="flex flex-wrap gap-2">
+                {skillCategory.items.map((skill) => (
+                  <Badge key={skill} variant="secondary" className="text-xs">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -202,7 +198,7 @@ const SoftwareEngineerPage = () => {
       {/* Certifications Section */}
       <section className="container mx-auto px-6 py-12 max-w-4xl">
         <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Certifications & Achievements</h2>
-        <div className="space-y-4">
+        <div className="grid md:grid-cols-2 gap-4">
           {certifications.map((cert, index) => (
             <Card key={index} className="transition-shadow hover:shadow-lg">
               <CardContent className="p-6">
