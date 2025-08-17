@@ -11,6 +11,7 @@ import AuthPage from "./pages/AuthPage";
 import ArticlesPage from "./pages/ArticlesPage";
 import AdminDashboard from "./pages/AdminDashboard";
 import ArticlePage from "./pages/ArticlePage";
+import SoftwareEngineerPage from "./pages/SoftwareEngineerPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/articles" element={<ArticlesPage />} />
             <Route path="/article/:id" element={<ArticlePage />} />
+            <Route path="/software-engineer" element={<SoftwareEngineerPage />} />
             <Route path="/admin" element={
               <AuthGuard requiredRole="admin">
                 <AdminDashboard />
