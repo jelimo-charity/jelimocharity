@@ -1,77 +1,89 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Code, Database, Globe, GitBranch, Smartphone, Cloud } from "lucide-react";
+import { ArrowLeft, Code, Mail, Phone, Linkedin, Github, Award, GraduationCap } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const SoftwareEngineerPage = () => {
   const skills = [
-    { category: "Frontend", items: ["React", "TypeScript", "Next.js", "Tailwind CSS", "HTML5", "CSS3"] },
-    { category: "Backend", items: ["Node.js", "Python", "Express", "PostgreSQL", "MongoDB", "REST APIs"] },
-    { category: "Mobile", items: ["React Native", "Flutter", "iOS Development", "Android Development"] },
-    { category: "Cloud & DevOps", items: ["AWS", "Docker", "Kubernetes", "CI/CD", "Git", "Linux"] },
-    { category: "Tools & Frameworks", items: ["VS Code", "Figma", "Supabase", "Firebase", "GraphQL", "Jest"] }
+    { category: "Frontend", items: ["JavaScript", "React.js", "Angular", "HTML", "CSS"] },
+    { category: "Backend", items: ["Express.js (Node.js)", ".NET (C#)", "Hono", "SQL", "PostgreSQL"] },
+    { category: "Cloud & DevOps", items: ["Azure", "Docker", "Git", "GitHub"] },
+    { category: "AI & Analytics", items: ["OpenAI", "Google Colab", "Power BI", "Power Automate"] },
+    { category: "Methodologies", items: ["Agile", "Scrum", "Jira", "Confluence"] }
   ];
 
   const experience = [
     {
-      title: "Senior Software Engineer",
-      company: "Tech Innovation Corp",
-      period: "2022 - Present",
-      description: "Leading development of scalable web applications serving 100K+ users. Architected microservices infrastructure and mentored junior developers.",
-      technologies: ["React", "Node.js", "AWS", "PostgreSQL"]
+      title: "Full-stack Engineer",
+      company: "Griffin Global Technologies",
+      period: "Dec 2024 – Present",
+      description: "Built and maintained time entry system, customer portal and resource utilization management full-stack systems. Collaborated with Agile team across full SDLC from requirements gathering to deployment.",
+      technologies: ["TypeScript", "React", "Angular", ".NET (C#)", "Node.js", "SQL", "PostgreSQL"]
     },
     {
-      title: "Full Stack Developer",
-      company: "Digital Solutions Ltd",
-      period: "2020 - 2022",
-      description: "Built responsive web applications and mobile apps. Collaborated with cross-functional teams to deliver high-quality software solutions.",
-      technologies: ["Vue.js", "Python", "MongoDB", "Docker"]
-    },
-    {
-      title: "Frontend Developer",
-      company: "StartupX",
-      period: "2018 - 2020",
-      description: "Developed user-friendly interfaces and implemented modern design systems. Improved application performance by 40%.",
-      technologies: ["React", "JavaScript", "SASS", "Webpack"]
+      title: "Software Developer",
+      company: "The Jitu",
+      period: "May 2023 – Dec 2024",
+      description: "Developed task management and car rental system from frontend to backend. Practiced clean code, version control, QA and Agile practices in remote development environment.",
+      technologies: ["JavaScript", "React", "Node.js", "Git", "Agile"]
     }
   ];
 
+  const education = {
+    degree: "BSC Software Engineering",
+    institution: "Kirinyaga University",
+    period: "2020 - 2024"
+  };
+
   const projects = [
     {
-      title: "E-Learning Platform",
-      description: "A comprehensive platform for online education with real-time video conferencing and progress tracking.",
-      tech: ["React", "Node.js", "WebRTC", "PostgreSQL"],
-      icon: <Globe className="h-6 w-6" />
-    },
-    {
-      title: "Mobile Banking App",
-      description: "Secure financial application with biometric authentication and real-time transaction processing.",
-      tech: ["React Native", "Express", "MongoDB", "JWT"],
-      icon: <Smartphone className="h-6 w-6" />
-    },
-    {
-      title: "Cloud Analytics Dashboard",
-      description: "Data visualization platform processing millions of records with interactive charts and reports.",
-      tech: ["Vue.js", "Python", "AWS", "D3.js"],
-      icon: <Database className="h-6 w-6" />
+      title: "LumiBytes",
+      description: "A mission-driven platform designed to raise responsible digital citizens by equipping children with essential knowledge on digital safety, ethics, and technology for good while guiding parents with tools and insights.",
+      tech: ["React", "Node.js", "PostgreSQL", "OpenAI"],
+      status: "Live",
+      link: "#"
     }
+  ];
+
+  const certifications = [
+    "Microsoft Imagine Cup 2023 EMEA World Finals Online Semifinals",
+    "KamiLimu Cohort 6.0 Mentee",
+    "Beta Microsoft Learn Student Ambassador"
   ];
 
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="container mx-auto px-6 py-8 max-w-4xl">
-        <Link to="/" className="inline-flex items-center text-primary hover:text-primary/80 mb-6">
+      <header className="container mx-auto px-6 py-12 max-w-4xl">
+        <Link to="/" className="inline-flex items-center text-primary hover:text-primary/80 mb-8">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Home
         </Link>
-        <div className="flex flex-col items-center text-center space-y-4">
-          <div className="flex items-center gap-3">
-            <Code className="h-8 w-8 text-primary" />
-            <h1 className="text-4xl font-bold text-foreground">Software Engineer</h1>
+        <div className="text-center space-y-6">
+          <div className="space-y-2">
+            <h1 className="text-4xl font-bold text-foreground">Charity Jelimo Kipruto</h1>
+            <p className="text-xl text-muted-foreground">Software Engineer</p>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            Passionate about creating innovative digital solutions that solve real-world problems and make technology accessible to everyone.
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <Mail className="h-4 w-4" />
+              <span>Charityjelimo893@gmail.com</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Phone className="h-4 w-4" />
+              <span>(+254) 743508413</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Linkedin className="h-4 w-4" />
+              <span>LinkedIn</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Github className="h-4 w-4" />
+              <span>GitHub</span>
+            </div>
+          </div>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Every line of code I write is a step towards making a difference. I'm a passionate and adaptable software engineer with experience in full-stack development, team collaboration, and building real-world solutions. I thrive in agile environments and enjoy using technology to solve problems and empower communities.
           </p>
         </div>
       </header>
@@ -133,18 +145,45 @@ const SoftwareEngineerPage = () => {
         </div>
       </section>
 
+      {/* Education Section */}
+      <section className="container mx-auto px-6 py-12 max-w-4xl">
+        <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Education</h2>
+        <div className="flex justify-center">
+          <Card className="w-full max-w-md">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <GraduationCap className="h-6 w-6 text-primary" />
+                <div>
+                  <CardTitle className="text-xl">{education.degree}</CardTitle>
+                  <CardDescription className="text-base font-medium text-primary">
+                    {education.institution}
+                  </CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <Badge variant="outline">{education.period}</Badge>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Featured Projects Section */}
       <section className="container mx-auto px-6 py-12 max-w-4xl">
-        <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Featured Projects</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Personal Projects</h2>
+        <div className="flex justify-center">
           {projects.map((project, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow">
+            <Card key={index} className="w-full max-w-2xl">
               <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="text-primary">{project.icon}</div>
-                  <CardTitle className="text-lg">{project.title}</CardTitle>
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                  <Badge variant="outline" className="text-primary">
+                    {project.status}
+                  </Badge>
                 </div>
-                <CardDescription>{project.description}</CardDescription>
+                <CardDescription className="text-base leading-relaxed">
+                  {project.description}
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
@@ -153,6 +192,23 @@ const SoftwareEngineerPage = () => {
                       {tech}
                     </Badge>
                   ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="container mx-auto px-6 py-12 max-w-4xl">
+        <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Certifications & Achievements</h2>
+        <div className="space-y-4">
+          {certifications.map((cert, index) => (
+            <Card key={index} className="transition-shadow hover:shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3">
+                  <Award className="h-5 w-5 text-primary flex-shrink-0" />
+                  <p className="text-muted-foreground">{cert}</p>
                 </div>
               </CardContent>
             </Card>
