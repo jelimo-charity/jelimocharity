@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom";
 import { Code, Globe, ArrowRight, Shield } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import galleryPortrait from "@/assets/gallery-portrait.jpg";
-import galleryWorkspace from "@/assets/gallery-workspace.jpg";
-import galleryAdvocacy from "@/assets/gallery-advocacy.jpg";
-import gallerySpeaking from "@/assets/gallery-speaking.jpg";
-import galleryTeamwork from "@/assets/gallery-teamwork.jpg";
 
 const Index = () => {
   return (
@@ -38,22 +33,11 @@ const Index = () => {
       {/* Gallery Section */}
       <section className="container mx-auto px-6 py-12 max-w-4xl">
         <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Gallery</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img src={galleryPortrait} alt="Professional portrait" className="w-full h-40 md:h-48 object-cover" />
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img src={galleryWorkspace} alt="Workspace" className="w-full h-40 md:h-48 object-cover" />
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img src={galleryAdvocacy} alt="Digital citizenship advocacy" className="w-full h-40 md:h-48 object-cover" />
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img src={galleryTeamwork} alt="Team collaboration" className="w-full h-40 md:h-48 object-cover" />
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img src={gallerySpeaking} alt="Speaking at conference" className="w-full h-40 md:h-48 object-cover" />
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="aspect-square bg-muted rounded-lg"></div>
+          <div className="aspect-square bg-muted rounded-lg"></div>
+          <div className="aspect-square bg-muted rounded-lg"></div>
+          <div className="aspect-square bg-muted rounded-lg"></div>
         </div>
       </section>
 
