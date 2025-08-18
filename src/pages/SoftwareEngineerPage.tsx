@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Mail, Phone, Linkedin, Github, Award, GraduationCap, MapPin, Download } from "lucide-react";
+import { ArrowLeft, Code, Mail, Phone, Linkedin, Github, Award, GraduationCap } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 
 const SoftwareEngineerPage = () => {
   const skills = [
@@ -54,34 +53,17 @@ const SoftwareEngineerPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 z-50 p-6">
-        <Link 
-          to="/" 
-          className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
+      {/* Header */}
+      <header className="container mx-auto px-6 py-12 max-w-4xl">
+        <Link to="/" className="inline-flex items-center text-primary hover:text-primary/80 mb-8">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Home
         </Link>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="space-y-4">
-            <h1 className="text-6xl md:text-8xl font-bold text-foreground leading-tight">
-              IM CHARITY<br />
-              <span className="text-primary">JELIMO.</span>
-            </h1>
-            <div className="flex flex-wrap items-center justify-center gap-2 text-lg md:text-xl">
-              <span className="text-muted-foreground">Im a</span>
-              <span className="bg-primary text-primary-foreground px-3 py-1 rounded font-medium">
-                software engineer
-              </span>
-              <span className="text-muted-foreground">from Kenya.</span>
-            </div>
+        <div className="text-center space-y-6">
+          <div className="space-y-2">
+            <h1 className="text-4xl font-bold text-foreground">Charity Jelimo Kipruto</h1>
+            <p className="text-xl text-muted-foreground">Software Engineer</p>
           </div>
-          
           <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <Mail className="h-4 w-4" />
@@ -100,144 +82,144 @@ const SoftwareEngineerPage = () => {
               <span>GitHub</span>
             </div>
           </div>
-
-          <Button variant="outline" className="mt-8">
-            <Download className="h-4 w-4 mr-2" />
-            Download CV
-          </Button>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Every line of code I write is a step towards making a difference. I'm a passionate and adaptable software engineer with experience in full-stack development, team collaboration, and building real-world solutions. I thrive in agile environments and enjoy using technology to solve problems and empower communities.
+          </p>
         </div>
-      </section>
+      </header>
 
-      {/* About Section */}
-      <section className="py-20 bg-muted/20">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
-              <div className="w-16 h-1 bg-primary mb-8"></div>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                Every line of code I write is a step towards making a difference. I'm a passionate and adaptable software engineer with experience in full-stack development, team collaboration, and building real-world solutions. I thrive in agile environments and enjoy using technology to solve problems and empower communities.
-              </p>
-              
-              {/* Skills */}
-              <div className="space-y-6">
-                <h3 className="text-xl font-semibold">Technical Skills</h3>
-                {skills.map((skillCategory) => (
-                  <div key={skillCategory.category} className="space-y-3">
-                    <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                      {skillCategory.category}
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {skillCategory.items.map((skill) => (
-                        <Badge key={skill} variant="secondary" className="text-xs">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
+      {/* Skills Section */}
+      <section className="container mx-auto px-6 py-12 max-w-4xl">
+        <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Technical Skills</h2>
+        <div className="space-y-6">
+          {skills.map((skillCategory) => (
+            <div key={skillCategory.category} className="space-y-3">
+              <h3 className="text-lg font-semibold text-foreground">{skillCategory.category}</h3>
+              <div className="flex flex-wrap gap-2">
+                {skillCategory.items.map((skill) => (
+                  <Badge key={skill} variant="secondary" className="text-xs">
+                    {skill}
+                  </Badge>
                 ))}
               </div>
             </div>
-            
-            <div className="space-y-8">
-              {/* Education */}
-              <div className="bg-card p-6 rounded-lg border">
-                <div className="flex items-center gap-3 mb-4">
-                  <GraduationCap className="h-6 w-6 text-primary" />
-                  <h3 className="text-lg font-semibold">Education</h3>
-                </div>
-                <h4 className="font-medium">{education.degree}</h4>
-                <p className="text-primary font-medium">{education.institution}</p>
-                <p className="text-sm text-muted-foreground">{education.period}</p>
-              </div>
-
-              {/* Featured Project */}
-              <div className="bg-card p-6 rounded-lg border">
-                <h3 className="text-lg font-semibold mb-4">Featured Project</h3>
-                <h4 className="font-medium text-primary mb-2">{projects[0].title}</h4>
-                <p className="text-sm text-muted-foreground mb-4">{projects[0].description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {projects[0].tech.map((tech) => (
-                    <Badge key={tech} variant="outline" className="text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
       {/* Experience Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Experience</h2>
-          <div className="w-16 h-1 bg-primary mx-auto mb-16"></div>
-          
-          <div className="space-y-12">
-            {experience.map((job, index) => (
-              <div key={index} className="border-l-2 border-muted pl-8 relative">
-                <div className="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full"></div>
-                <div className="space-y-4">
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2">
-                    <div>
-                      <h3 className="text-2xl font-semibold">{job.title}</h3>
-                      <p className="text-lg text-primary font-medium">{job.company}</p>
-                    </div>
-                    <Badge variant="outline" className="w-fit text-sm">
-                      {job.period}
-                    </Badge>
+      <section className="container mx-auto px-6 py-12 max-w-4xl">
+        <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Professional Experience</h2>
+        <div className="space-y-6">
+          {experience.map((job, index) => (
+            <Card key={index} className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                  <div>
+                    <CardTitle className="text-xl">{job.title}</CardTitle>
+                    <CardDescription className="text-base font-medium text-primary">
+                      {job.company}
+                    </CardDescription>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">{job.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {job.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
+                  <Badge variant="outline" className="w-fit">
+                    {job.period}
+                  </Badge>
                 </div>
-              </div>
-            ))}
-          </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">{job.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {job.technologies.map((tech) => (
+                    <Badge key={tech} variant="secondary" className="text-xs">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 
+      {/* Education Section */}
+      <section className="container mx-auto px-6 py-12 max-w-4xl">
+        <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Education</h2>
+        <div className="flex justify-center">
+          <Card className="w-full max-w-md">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <GraduationCap className="h-6 w-6 text-primary" />
+                <div>
+                  <CardTitle className="text-xl">{education.degree}</CardTitle>
+                  <CardDescription className="text-base font-medium text-primary">
+                    {education.institution}
+                  </CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <Badge variant="outline">{education.period}</Badge>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Featured Projects Section */}
+      <section className="container mx-auto px-6 py-12 max-w-4xl">
+        <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Personal Projects</h2>
+        <div className="flex justify-center">
+          {projects.map((project, index) => (
+            <Card key={index} className="w-full max-w-2xl">
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                  <Badge variant="outline" className="text-primary">
+                    {project.status}
+                  </Badge>
+                </div>
+                <CardDescription className="text-base leading-relaxed">
+                  {project.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech) => (
+                    <Badge key={tech} variant="secondary" className="text-xs">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
 
       {/* Certifications Section */}
-      <section className="py-20 bg-muted/20">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Achievements</h2>
-          <div className="w-16 h-1 bg-primary mx-auto mb-16"></div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {certifications.map((cert, index) => (
-              <div key={index} className="bg-card p-6 rounded-lg border hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <Award className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <p className="text-muted-foreground leading-relaxed">{cert}</p>
+      <section className="container mx-auto px-6 py-12 max-w-4xl">
+        <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Certifications & Achievements</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          {certifications.map((cert, index) => (
+            <Card key={index} className="transition-shadow hover:shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3">
+                  <Award className="h-5 w-5 text-primary flex-shrink-0" />
+                  <p className="text-muted-foreground">{cert}</p>
                 </div>
-              </div>
-            ))}
-          </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6 max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's Work Together</h2>
-          <div className="w-16 h-1 bg-primary mx-auto mb-8"></div>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Ready to collaborate on your next project? I'm always excited to take on new challenges and create innovative solutions.
+      {/* Footer */}
+      <footer className="container mx-auto px-6 py-8 max-w-4xl border-t border-border">
+        <div className="text-center">
+          <p className="text-sm text-muted-foreground">
+            Ready to collaborate on your next project? <Link to="/contact" className="text-primary hover:underline">Get in touch</Link>
           </p>
-          <Button size="lg" className="font-medium">
-            <Mail className="h-4 w-4 mr-2" />
-            Get In Touch
-          </Button>
         </div>
-      </section>
+      </footer>
     </div>
   );
 };
