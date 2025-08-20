@@ -103,37 +103,14 @@ const SoftwareEngineerPage = () => {
         </div>
       </header>
 
-      {/* Skills Section */}
-      <section className="container mx-auto px-6 py-12 max-w-4xl">
-        <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Technical Skills</h2>
-        <div className="bg-card rounded-lg border p-8 shadow-sm">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skills.map((skillCategory) => (
-              <div key={skillCategory.category} className="space-y-3">
-                <h3 className="text-lg font-semibold text-foreground border-b border-border pb-2">
-                  {skillCategory.category}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {skillCategory.items.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="text-xs">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* My Journey Section */}  
-      <section className="container mx-auto px-6 py-12 max-w-4xl">
-        <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">The Code Behind the Journey</h2>
+      <section className="container mx-auto px-6 py-8 max-w-4xl">
+        <h2 className="text-2xl font-semibold text-foreground mb-6 text-center">The Code Behind the Journey</h2>
         <Card className="bg-card/50">
-          <CardContent className="p-8">
+          <CardContent className="p-6">
             <div className="flex items-start gap-4">
               <BookOpen className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-3 text-muted-foreground">
                 <p>
                   My journey into software engineering began with curiosity and a simple "Hello, World!" program. What started as tinkering with HTML and CSS in college quickly evolved into a passion for solving complex problems through elegant code.
                 </p>
@@ -147,6 +124,27 @@ const SoftwareEngineerPage = () => {
             </div>
           </CardContent>
         </Card>
+      </section>
+
+      {/* Skills Section */}
+      <section className="container mx-auto px-6 py-8 max-w-4xl">
+        <h2 className="text-2xl font-semibold text-foreground mb-6 text-center">Technical Skills</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skills.map((skillCategory) => (
+            <div key={skillCategory.category} className="space-y-3">
+              <h3 className="text-base font-medium text-foreground border-b border-border pb-2">
+                {skillCategory.category}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {skillCategory.items.map((skill) => (
+                  <Badge key={skill} variant="secondary" className="text-xs">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Experience Section */}
