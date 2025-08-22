@@ -38,41 +38,43 @@ const Index = () => {
       {/* Gallery Section */}
       <section className="container mx-auto px-6 py-16 max-w-6xl">
         <h2 className="text-2xl font-semibold text-foreground mb-12 text-center">Gallery</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 items-center justify-items-center">
-          <div className="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64">
-            <img 
-              src={galleryPortrait} 
-              alt="Professional portrait" 
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
-            />
-          </div>
-          <div className="w-36 h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 mt-8 md:mt-12">
-            <img 
-              src={galleryWorkspace} 
-              alt="Workspace" 
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
-            />
-          </div>
-          <div className="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64">
-            <img 
-              src={galleryAdvocacy} 
-              alt="Digital citizenship advocacy" 
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
-            />
-          </div>
-          <div className="w-36 h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 -mt-4 md:-mt-6">
-            <img 
-              src={galleryTeamwork} 
-              alt="Team collaboration" 
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
-            />
-          </div>
-          <div className="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 mt-4 md:mt-6">
-            <img 
-              src={gallerySpeaking} 
-              alt="Speaking at conference" 
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
-            />
+        <div className="bg-muted/30 rounded-3xl p-8 md:p-12 lg:p-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 items-center justify-items-center">
+            <div className="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64">
+              <img 
+                src={galleryPortrait} 
+                alt="Professional portrait" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
+            <div className="w-36 h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 mt-8 md:mt-12">
+              <img 
+                src={galleryWorkspace} 
+                alt="Workspace" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
+            <div className="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64">
+              <img 
+                src={galleryAdvocacy} 
+                alt="Digital citizenship advocacy" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
+            <div className="w-36 h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 -mt-4 md:-mt-6">
+              <img 
+                src={galleryTeamwork} 
+                alt="Team collaboration" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
+            <div className="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 mt-4 md:mt-6">
+              <img 
+                src={gallerySpeaking} 
+                alt="Speaking at conference" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
           </div>
         </div>
       </section>
