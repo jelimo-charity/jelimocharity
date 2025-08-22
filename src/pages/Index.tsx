@@ -36,23 +36,43 @@ const Index = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="container mx-auto px-6 py-12 max-w-4xl">
-        <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Gallery</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img src={galleryPortrait} alt="Professional portrait" className="w-full h-40 md:h-48 object-cover" />
+      <section className="container mx-auto px-6 py-16 max-w-6xl">
+        <h2 className="text-2xl font-semibold text-foreground mb-12 text-center">Gallery</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 items-center justify-items-center">
+          <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48">
+            <img 
+              src={galleryPortrait} 
+              alt="Professional portrait" 
+              className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300" 
+            />
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img src={galleryWorkspace} alt="Workspace" className="w-full h-40 md:h-48 object-cover" />
+          <div className="w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 mt-8 md:mt-12">
+            <img 
+              src={galleryWorkspace} 
+              alt="Workspace" 
+              className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300" 
+            />
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img src={galleryAdvocacy} alt="Digital citizenship advocacy" className="w-full h-40 md:h-48 object-cover" />
+          <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48">
+            <img 
+              src={galleryAdvocacy} 
+              alt="Digital citizenship advocacy" 
+              className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300" 
+            />
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img src={galleryTeamwork} alt="Team collaboration" className="w-full h-40 md:h-48 object-cover" />
+          <div className="w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 -mt-4 md:-mt-6">
+            <img 
+              src={galleryTeamwork} 
+              alt="Team collaboration" 
+              className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300" 
+            />
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img src={gallerySpeaking} alt="Speaking at conference" className="w-full h-40 md:h-48 object-cover" />
+          <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mt-4 md:mt-6">
+            <img 
+              src={gallerySpeaking} 
+              alt="Speaking at conference" 
+              className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300" 
+            />
           </div>
         </div>
       </section>
