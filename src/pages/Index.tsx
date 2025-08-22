@@ -46,29 +46,49 @@ const Index = () => {
     </div>
   </section>
 
-  {/* Gallery Section */}
-  <section id="pixels" className="flex items-center justify-center w-full scroll-mt-24 relative z-10">
-    <div className="w-full max-w-5xl mx-auto bg-gradient-to-br from-slate-900/80 via-slate-800/70 to-slate-900/80 rounded-3xl shadow-2xl p-10 border border-slate-800 backdrop-blur-xl">
-      <h2 className="text-4xl font-extrabold text-fuchsia-200 mb-8 text-center tracking-tight drop-shadow-lg">Life in Pixels</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
-        <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-cyan-400/30 bg-slate-900/80 hover:scale-105 transition-transform duration-300">
-          <img src={galleryPortrait} alt="Professional portrait" className="w-full h-44 md:h-56 object-cover grayscale-0 hover:grayscale transition duration-300" />
+      {/* Gallery Section */}
+      <section className="container mx-auto px-6 py-16 max-w-6xl">
+        <h2 className="text-2xl font-semibold text-foreground mb-12 text-center">Gallery</h2>
+        <div className="bg-muted/30 rounded-3xl p-8 md:p-12 lg:p-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 items-center justify-items-center">
+            <div className="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64">
+              <img 
+                src={galleryPortrait} 
+                alt="Professional portrait" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
+            <div className="w-36 h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 mt-8 md:mt-12">
+              <img 
+                src={galleryWorkspace} 
+                alt="Workspace" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
+            <div className="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64">
+              <img 
+                src={galleryAdvocacy} 
+                alt="Digital citizenship advocacy" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
+            <div className="w-36 h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 -mt-4 md:-mt-6">
+              <img 
+                src={galleryTeamwork} 
+                alt="Team collaboration" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
+            <div className="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 mt-4 md:mt-6">
+              <img 
+                src={gallerySpeaking} 
+                alt="Speaking at conference" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
+          </div>
         </div>
-        <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-fuchsia-400/30 bg-slate-900/80 hover:scale-105 transition-transform duration-300">
-          <img src={galleryWorkspace} alt="Workspace" className="w-full h-44 md:h-56 object-cover grayscale-0 hover:grayscale transition duration-300" />
-        </div>
-        <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-yellow-300/30 bg-slate-900/80 hover:scale-105 transition-transform duration-300">
-          <img src={galleryAdvocacy} alt="Digital citizenship advocacy" className="w-full h-44 md:h-56 object-cover grayscale-0 hover:grayscale transition duration-300" />
-        </div>
-        <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-orange-400/30 bg-slate-900/80 hover:scale-105 transition-transform duration-300">
-          <img src={galleryTeamwork} alt="Team collaboration" className="w-full h-44 md:h-56 object-cover grayscale-0 hover:grayscale transition duration-300" />
-        </div>
-        <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-blue-400/30 bg-slate-900/80 hover:scale-105 transition-transform duration-300">
-          <img src={gallerySpeaking} alt="Speaking at conference" className="w-full h-44 md:h-56 object-cover grayscale-0 hover:grayscale transition duration-300" />
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
       {/* Role Cards */}
   <section id="hats" className="flex items-center justify-center w-full scroll-mt-24 relative z-10">
