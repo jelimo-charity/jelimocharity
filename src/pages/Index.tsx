@@ -39,39 +39,39 @@ const Index = () => {
       <section className="container mx-auto px-6 py-16 max-w-6xl">
         <h2 className="text-2xl font-semibold text-foreground mb-12 text-center">Gallery</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 items-center justify-items-center">
-          <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48">
+          <div className="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64">
             <img 
               src={galleryPortrait} 
               alt="Professional portrait" 
-              className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300" 
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
             />
           </div>
-          <div className="w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 mt-8 md:mt-12">
+          <div className="w-36 h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 mt-8 md:mt-12">
             <img 
               src={galleryWorkspace} 
               alt="Workspace" 
-              className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300" 
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
             />
           </div>
-          <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48">
+          <div className="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64">
             <img 
               src={galleryAdvocacy} 
               alt="Digital citizenship advocacy" 
-              className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300" 
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
             />
           </div>
-          <div className="w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 -mt-4 md:-mt-6">
+          <div className="w-36 h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 -mt-4 md:-mt-6">
             <img 
               src={galleryTeamwork} 
               alt="Team collaboration" 
-              className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300" 
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
             />
           </div>
-          <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mt-4 md:mt-6">
+          <div className="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 mt-4 md:mt-6">
             <img 
               src={gallerySpeaking} 
               alt="Speaking at conference" 
-              className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300" 
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
             />
           </div>
         </div>
