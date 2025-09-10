@@ -1,0 +1,30 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # The name of the deployment
+  name: lumibytes-app
+spec:
+  # The number of replicas of the application to run
+  replicas: 2
+  # A selector that matches the pods that the deployment manages
+  selector:
+    matchLabels:
+      # The key and value that must match the pod's labels
+      app: lumibytes-app
+  # The template for the pods in the deployment
+  template:
+    metadata:
+      # The labels that are applied to the pods
+      labels:
+        # The key and value that must match the selector
+        app: lumibytes-app
+    spec:
+      # The specification for the containers in the pod
+      containers:
+      - name: lumibytes-app
+        # The Docker image to use for the container
+        image: jelimocharity/lumibytes-app:latest
+        # The ports that the container exposes
+        ports:
+        - containerPort: 80
