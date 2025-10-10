@@ -31,11 +31,7 @@ const App = () => (
             <Route path="/article/:id" element={<ArticlePage />} />
             <Route path="/software-engineer" element={<SoftwareEngineerPage />} />
             <Route path="/advocate" element={<AdvocatePage />} />
-            <Route path="/admin" element={
-              <AuthGuard requiredRole="admin">
-                <AdminDashboard />
-              </AuthGuard>
-            } />
+            <Route path="/admin" element={<AdminDashboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>

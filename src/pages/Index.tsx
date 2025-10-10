@@ -16,7 +16,7 @@ const Index = () => {
       <header className=" mx-auto px-4 py-4  relative z-20 sticky top-0   border-b border-slate-800 shadow-lg ">
         <div className="flex flex-col items-center text-center gap-2">
           <h1 className="text-5xl md:text-6xl text-cyan-100 font-bold drop-shadow-xl tracking-tight">Charity Jelimo</h1>
-          <p className="text-lg md:text-md text-slate-100 font-semibold tracking-wide mb-1">Software Engineer <span className="text-fuchsia-400">|</span> Digital Citizenship Advocate</p>
+          <p className="text-lg md:text-md text-slate-100 font-semibold tracking-wide mb-1">Software Engineer <span className="text-fuchsia-400">|</span> Digital Storyteller</p>
           <nav className="flex mt-1 text-base">
             <a href="#loop" className="px-3 py-1 text-sm hover:bg-fuchsia-900/60 hover:text-fuchsia-300 transition-colors duration-200 shadow">Pulse</a>
             <a href="#pixels" className="px-3 py-1 text-sm  hover:bg-cyan-900/60 hover:text-cyan-300 transition-colors duration-200 shadow">Frames</a>
@@ -159,7 +159,7 @@ const Index = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-cyan-200 group-hover:text-cyan-300">
                 <Globe className="h-6 w-6 text-cyan-400" />
-                Digital Citizenship Advocate
+                Digital Storyteller
               </CardTitle>
               <CardDescription className="text-slate-300">
                 Promoting responsible technology use
@@ -180,8 +180,42 @@ const Index = () => {
     </div>
   </section>
 
+      {/* Get In Touch Section */}
+      <section id="connect" className="relative z-10 py-16 px-4 scroll-mt-24">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-extrabold text-cyan-200 mb-4 tracking-tight drop-shadow-lg">
+            Get In Touch
+          </h2>
+          <p className="text-slate-300 mb-8">Let's connect and collaborate</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="mailto:charity@example.com"
+              className="px-8 py-3 bg-cyan-600/80 hover:bg-cyan-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              Email
+            </a>
+            <a
+              href="https://github.com/charityjelimo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 bg-slate-700/80 hover:bg-slate-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/charityjelimo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 bg-blue-600/80 hover:bg-blue-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer id="connect" className="mx-auto px-4 py-6   border-t border-slate-800 scroll-mt-24 relative z-10 bg-slate-600/20">
+      <footer className="mx-auto px-4 py-6 border-t border-slate-800 relative z-10 bg-slate-600/20">
         <div className="text-center">
           <p className="text-xs text-slate-400">
             © 2024 Charity Jelimo. All rights reserved.

@@ -32,31 +32,15 @@ const ArticlesPage = () => {
       {/* Simple Header */}
       <header className="container mx-auto px-6 py-8 max-w-4xl">
         <div className="flex flex-col items-center text-center space-y-4">
-          <h1 className="text-4xl font-bold text-foreground">Charity Jelimo</h1>
+          <h1 className="text-4xl font-bold text-foreground">Digital Stories</h1>
           <p className="text-lg text-muted-foreground">
-            Digital Citizenship Advocate | Parenting Expert | Child Development Specialist
+            Tales from the Digital Frontier
           </p>
-          <nav className="flex items-center space-x-6 text-sm">
-            <Link to="/" className="text-foreground hover:text-primary transition-colors">
-              Home
-            </Link>
-            <span className="text-primary font-medium">Articles</span>
-            <Link to="/admin" className="text-foreground hover:text-primary transition-colors flex items-center gap-1">
-              <Shield className="h-4 w-4" />
-              Admin
-            </Link>
-          </nav>
         </div>
       </header>
 
-      {/* Divider */}
-      <div className="container mx-auto px-6 max-w-4xl">
-        <hr className="border-border" />
-      </div>
-
       {/* Articles Section */}
       <section className="container mx-auto px-6 py-12 max-w-4xl">
-        <h2 className="text-2xl font-semibold text-foreground mb-8">All Articles</h2>
         
         {articles && articles.length > 0 ? (
           <div className="space-y-6">
@@ -89,11 +73,6 @@ const ArticlesPage = () => {
         ) : (
           <div className="text-center py-12">
             <p className="text-muted-foreground">No articles published yet.</p>
-            <Link to="/admin" className="inline-block mt-4">
-              <Button variant="outline">
-                Go to Admin to Add Articles
-              </Button>
-            </Link>
           </div>
         )}
       </section>

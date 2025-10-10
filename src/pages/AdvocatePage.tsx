@@ -74,7 +74,7 @@ const AdvocatePage = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <Globe className="h-8 w-8 text-primary" />
-              <h1 className="text-3xl font-bold text-foreground">Digital Citizenship Advocate</h1>
+              <h1 className="text-3xl font-bold text-foreground">Digital Storyteller</h1>
             </div>
             <p className="text-lg text-muted-foreground max-w-2xl">
               Empowering families and communities with the knowledge and tools needed to navigate our digital world safely and responsibly.
