@@ -30,13 +30,21 @@ interface BlogPost {
 export const BlogManager = () => {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [editingPost, setEditingPost] = useState<BlogPost | null>(null);
-  const [newPost, setNewPost] = useState({
+  const [newPost, setNewPost] = useState<{
+    title: string;
+    content: string;
+    author: string;
+    category: string;
+    tags: string;
+    status: 'draft' | 'published';
+    image: string;
+  }>({
     title: '',
     content: '',
     author: '',
     category: '',
     tags: '',
-    status: 'draft' as 'draft' | 'published',
+    status: 'draft',
     image: ''
   });
 
@@ -212,7 +220,7 @@ export const BlogManager = () => {
                 </div>
                 <div>
                   <Label>Status</Label>
-                  <Select onValueChange={(value: 'draft' | 'published') => setNewPost({...newPost, status: value})} value={newPost.status}>
+                  <Select onValueChange={(value) => setNewPost({...newPost, status: value as 'draft' | 'published'})} value={newPost.status}>
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
