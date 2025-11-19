@@ -30,12 +30,21 @@ interface LearningMaterial {
 export const LearningMaterialsManager = () => {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [editingMaterial, setEditingMaterial] = useState<LearningMaterial | null>(null);
-  const [newMaterial, setNewMaterial] = useState({
+  const [newMaterial, setNewMaterial] = useState<{
+    title: string;
+    description: string;
+    category: string;
+    ageRange: string;
+    type: 'video' | 'pdf' | 'interactive' | 'game' | 'worksheet';
+    fileUrl: string;
+    thumbnailUrl: string;
+    author: string;
+  }>({
     title: '',
     description: '',
     category: '',
     ageRange: '',
-    type: 'pdf' as 'video' | 'pdf' | 'interactive' | 'game' | 'worksheet',
+    type: 'pdf',
     fileUrl: '',
     thumbnailUrl: '',
     author: ''
@@ -273,7 +282,7 @@ export const LearningMaterialsManager = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <Label>Type</Label>
-                  <Select onValueChange={(value: any) => setNewMaterial({...newMaterial, type: value})} value={newMaterial.type}>
+                  <Select onValueChange={(value) => setNewMaterial({...newMaterial, type: value as 'video' | 'pdf' | 'interactive' | 'game' | 'worksheet'})} value={newMaterial.type}>
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
