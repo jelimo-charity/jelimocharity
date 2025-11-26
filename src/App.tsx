@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import AuthPage from "./pages/AuthPage";
 import ArticlesPage from "./pages/ArticlesPage";
 import SoftwareEngineerPage from "./pages/SoftwareEngineerPage";
+
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/articles" element={<ArticlesPage />} />
             <Route path="/software-engineer" element={<SoftwareEngineerPage />} />
+           
             <Route path="/admin" element={null} />
             <Route path="*" element={<NotFound />} />
           </Routes>
