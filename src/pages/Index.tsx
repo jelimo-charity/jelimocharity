@@ -96,18 +96,35 @@ const Index = () => {
               LinkedIn
             </a>
             <a 
-              href="mailto:hello@jelimocharity.com"
+              href="mailto:charityjelimo893@gmail.com"
               className="text-secondary hover:text-primary transition-colors"
             >
               Email
             </a>
+            <a 
+              href="https://medium.com/@charityjelimo" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-primary transition-colors"
+            >
+              Medium
+            </a>
+            <a 
+              href="https://charityjelimo.hashnode.dev/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-primary transition-colors"
+            >
+              Hashnode
+            </a>
+            
           </div>
         </div>
 
         {/* Footer */}
         <footer className="mt-20 text-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 Charity Jelimo
+            © 2025 Charity Jelimo
           </p>
         </footer>
       </section>
