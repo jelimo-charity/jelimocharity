@@ -47,6 +47,15 @@ const ArticlesPage = () => {
               onClick={() => setSelectedArticle(blog)}
               className="group text-left border border-border rounded-lg hover:border-primary transition-all duration-300 bg-card overflow-hidden h-full flex flex-col"
             >
+              {blog.coverImage && (
+                <div className="w-full h-48 overflow-hidden">
+                  <img 
+                    src={blog.coverImage} 
+                    alt={blog.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
               <div className="p-6 space-y-4 flex-1 flex flex-col">
                 <div className="flex items-center gap-2 text-xs text-muted-foreground">
                   <span className="px-2 py-1 bg-background border border-primary/30 rounded text-primary">
@@ -93,6 +102,15 @@ const ArticlesPage = () => {
         <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto bg-card border-border">
           {selectedArticle && (
             <>
+              {selectedArticle.coverImage && (
+                <div className="w-full h-64 md:h-80 overflow-hidden rounded-t-lg -mt-6 -mx-6 mb-6">
+                  <img 
+                    src={selectedArticle.coverImage} 
+                    alt={selectedArticle.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
               <DialogHeader className="space-y-4 pb-6 border-b border-border">
                 <div className="flex items-center gap-2 text-xs text-muted-foreground">
                   <span className="px-3 py-1 bg-background border border-primary/30 rounded text-primary">

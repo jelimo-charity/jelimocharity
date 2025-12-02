@@ -24,7 +24,7 @@ const SoftwareEngineerPage = () => {
                     <div>
                       <h3 className="text-xl font-medium text-accent">Associate Engineer</h3>
                       <p className="text-primary font-medium">GRIFFIN Global Technologies, LLC</p>
-                      <p className="text-sm text-muted-foreground">Mar 2025 - Present · 9 mos · Full-time · Hybrid</p>
+                      <p className="text-sm text-muted-foreground">Mar 2025 - Present · 1 year 1 mos · Full-time · Hybrid</p>
                     </div>
                     <ul className="text-secondary space-y-2 text-sm leading-relaxed">
                       <li>• Participated in the full software development lifecycle, from requirements gathering to deployment and maintenance.</li>
@@ -32,7 +32,7 @@ const SoftwareEngineerPage = () => {
                       <li>• Contributed to testing efforts, code reviews, and documentation to uphold engineering best practices.</li>
                       <li>• Supported the integration of new technologies and tools to improve system performance and team productivity.</li>
                     </ul>
-                    <p className="text-xs text-muted-foreground italic">Docker Products, Microsoft Power BI and +15 skills</p>
+                    {/* <p className="text-xs text-muted-foreground italic">Docker Products, Microsoft Power BI and +15 skills</p> */}
                   </div>
                 </div>
               </div>
@@ -46,7 +46,7 @@ const SoftwareEngineerPage = () => {
                       <p className="text-primary font-medium">GRIFFIN Global Technologies, LLC</p>
                       <p className="text-sm text-muted-foreground">Dec 2024 - Feb 2025 · 3 mos · Internship · Nyeri, Kenya · On-site</p>
                     </div>
-                    <p className="text-xs text-muted-foreground italic">Node.js, Git and +8 skills</p>
+                    {/* <p className="text-xs text-muted-foreground italic">Node.js, Git and +8 skills</p> */}
                   </div>
                 </div>
               </div>
@@ -63,7 +63,7 @@ const SoftwareEngineerPage = () => {
                     <p className="text-secondary text-sm leading-relaxed">
                       Participated in a 3-month full-stack training program where I enhanced my expertise in React, TypeScript, PostgreSQL, and Hono(Node.js). Successfully developed a car rental application, applying my skills in creating scalable solutions and improving my technical and soft skills.
                     </p>
-                    <p className="text-xs text-muted-foreground italic">Drizzle ORM, Node.js and +11 skills</p>
+                    {/* <p className="text-xs text-muted-foreground italic">Drizzle ORM, Node.js and +11 skills</p> */}
                   </div>
                 </div>
               </div>
@@ -77,7 +77,7 @@ const SoftwareEngineerPage = () => {
                       <p className="text-primary font-medium">THE Jitu</p>
                       <p className="text-sm text-muted-foreground">May 2023 - Jul 2023 · 3 mos · Apprenticeship · On-site</p>
                     </div>
-                    <p className="text-xs text-muted-foreground italic">Teamwork, Node.js and +12 skills</p>
+                    {/* <p className="text-xs text-muted-foreground italic">Teamwork, Node.js and +12 skills</p> */}
                   </div>
                 </div>
               </div>
@@ -108,6 +108,9 @@ const SoftwareEngineerPage = () => {
                   <h3 className="text-lg font-medium text-accent">Peer Mentor</h3>
                   <p className="text-primary text-sm font-medium">KamiLimu</p>
                   <p className="text-xs text-muted-foreground">Mar 2025 - Oct 2025 · 8 mos</p>
+                  <p className="text-secondary text-sm leading-relaxed">
+                 As a Peer Mentor at KamiLimu, I had the privilege of guiding three students through their intensive 8-month learning and professional development journey. I supported them in strengthening their technical skills, refining their personal branding, and navigating opportunities within the tech ecosystem. Throughout the mentorship, I provided consistent feedback, accountability, and career guidance—helping each mentee identify their strengths and grow with confidence. This experience strengthened my leadership, communication, and coaching abilities while allowing me to give back to a community that has significantly shaped my own growth.
+                </p>
                 </div>
               </div>
 
@@ -148,9 +151,9 @@ const SoftwareEngineerPage = () => {
                 <p className="text-secondary text-sm leading-relaxed">
                   Pursued a comprehensive education in Software Engineering, focusing on software development, system design, and project management. Gained hands-on experience through practical projects and coursework.
                 </p>
-                <p className="text-xs text-muted-foreground italic">
+                {/* <p className="text-xs text-muted-foreground italic">
                   Activities: Secretary General at Computer Society of Kirinyaga University and Microsoft Learn Student Ambassador
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -251,7 +254,7 @@ const SoftwareEngineerPage = () => {
                 <div className="bg-card border border-border rounded-lg p-6 space-y-6">
                   <h3 className="text-xl font-medium text-primary border-b border-border pb-3">Leadership & Soft Skills</h3>
                   
-                  <div className="space-y-4">
+                  <div className="grid grid-cols-2 gap-3">
                     {[
                       'Communication',
                       'Leadership',
@@ -262,13 +265,9 @@ const SoftwareEngineerPage = () => {
                       'Technical Writing',
                       'Problem Solving'
                     ].map((skill) => (
-                      <div key={skill} className="space-y-2">
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm text-secondary">{skill}</span>
-                        </div>
-                        <div className="h-2 bg-background rounded-full overflow-hidden">
-                          <div className="h-full bg-primary rounded-full" style={{ width: '85%' }}></div>
-                        </div>
+                      <div key={skill} className="flex items-center gap-2 px-3 py-2 bg-background border border-primary/20 rounded-md hover:border-primary/50 transition-colors">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                        <span className="text-sm text-secondary">{skill}</span>
                       </div>
                     ))}
                   </div>
@@ -348,7 +347,7 @@ const SoftwareEngineerPage = () => {
                 </p>
 
                 <p className="text-secondary text-base leading-relaxed">
-                  Now in my third year, I'm still deeply in love with technology. The journey has been one of growth, discovery, and transformation. I've learned that bugs and errors are not disappointments—they're puzzles waiting to be solved. I've been mentored through KamiLimu's 8-month program and challenged through Microsoft Game of Learners. Each experience has shaped me.
+                  Now, a year into my professional career, I'm still deeply in love with technology. The journey from a curious student to a working engineer has been one of continuous growth, discovery, and transformation. I've learned that bugs and errors are not disappointments—they're puzzles waiting to be solved. From being mentored through KamiLimu's 8-month program to being challenged through Microsoft Game of Learners, and now navigating real-world engineering challenges at GRIFFIN, each experience has shaped me into who I am today.
                 </p>
 
                 <p className="text-secondary text-base leading-relaxed">

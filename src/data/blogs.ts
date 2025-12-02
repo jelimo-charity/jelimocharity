@@ -7,262 +7,176 @@ export interface Blog {
   readTime: string;
   category: string;
   tags: string[];
+  coverImage?: string;
 }
 
 export const blogs: Blog[] = [
   {
     id: "1",
-    title: "Building Scalable Web Applications with ASP.NET Core",
-    excerpt: "Exploring best practices and architectural patterns for creating robust, scalable web applications using ASP.NET Core and modern development practices.",
-    content: `When building enterprise-level web applications, scalability isn't just a nice-to-have—it's essential. In this article, I'll share insights from my experience building scalable applications with ASP.NET Core.
+    title: "What is Progress Really Like?",
+    excerpt: "Progress is not linear. It's about persisting through the valley of disappointment and breaking through the plateau of latent potential. A reflection on patience, consistency, and courage in personal growth.",
+    coverImage: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80",
+    content: `"When nothing seems to help, I go and look at a stonecutter hammering away at his rock, perhaps a hundred times without as much as a crack showing in it. Yet at the hundred and first blow it will split in two, and I know it was not that last blow that did it — but all that had gone before." — Jacob A. Riis.
 
-## Key Principles
+This is my journey to redefining myself and to living an enlightened healthy existence. I've habits to break and habits to build. What am I learning about progress in this journey? Progress is not linear as I might have expected. The bad habits do not disappear in a day after we identify them, write them on a paper and the good habits do not build up in a day as well after we pen them down to replace the bad habits we want to break.
 
-**Clean Architecture** - Separating concerns and maintaining clear boundaries between layers ensures your application remains maintainable as it grows. This approach helps teams work independently on different parts of the system.
+## The Valley of Disappointment
 
-**Dependency Injection** - Leveraging ASP.NET Core's built-in DI container promotes loose coupling and makes your code more testable. It's a fundamental pattern that pays dividends in the long run.
+I have felt disappointed by myself when the next day, the next week I found myself in the same bad habit I promised myself to break. I have felt demotivated when my hardwork after weeks, months don't yield the results I've expected. Often, I've expected my efforts to yield the results quickly. That's not the point.
 
-**Async/Await** - Utilizing asynchronous programming patterns allows better resource utilization, especially for I/O-bound operations. This is crucial for handling high concurrency.
+This is the new lesson I'm learning from the book **'Atomic Habits'** by James Clear. The work and efforts are not wasted. It is simply being stored. It is not until much later that the full value of previous efforts is revealed. The reality is we have to go through the "valley of disappointment" but the work, the efforts should persist enough to break the "plateau of latent potential".
 
-**Caching Strategies** - Implementing distributed caching with Redis or similar technologies reduces database load and improves response times dramatically.
+## The Plateau of Latent Potential
 
-**Database Optimization** - Proper query optimization and indexing strategies are essential. Understanding your query patterns and designing indexes accordingly can make orders of magnitude difference in performance.
+Bamboo can barely be seen for the first five years as it builds extensive root systems underground before exploding ninety feet into the air within six weeks.
 
-## Real-World Implementation
+The moment we find ourselves struggling to build a good habit and break a bad habit, it is because we have not yet crossed the plateau. Complaining of not getting the results is like complaining why the bamboo has not built the roots within the early stages in the air.
 
-During my time at GRIFFIN, I worked on applications serving thousands of concurrent users. Here's what made the difference:
+When we finally break through the Plateau of Latent Potential, it is like an overnight success. The outside world only sees the most dramatic event rather than all that preceded it. But you know that it's the work you did long ago — when it seemed that you weren't making any progress — that makes the jump today possible.
 
-**API Rate Limiting** - Protecting resources from abuse while ensuring fair access for all users. Implementing rate limiting at multiple levels (user, IP, API key) provides flexibility.
+## The Sum of All Efforts
 
-**Load Balancing** - Distributing traffic efficiently across multiple instances ensures no single server becomes a bottleneck. Health checks and automatic failover are essential components.
+It's not only the last blow that splits the rock. It's not just the weeks when the bamboo finally explodes to the air. It's the sum of all the efforts we make until we break the plateau of latent potential.
 
-**Microservices Architecture** - Breaking down monoliths into smaller, independently deployable services allows teams to scale both the application and the organization.
+These require patience and consistency. These need courage. **Courage is to be disappointed, demotivated, afraid but with our knees knocking, heart beating and hands shaking to step out anyway, make a bold move to advance toward breaking the plateau of latent potential.**
 
-**Monitoring & Logging** - Using Application Insights and structured logging provides the observability needed to understand system behavior and quickly identify issues in production.
+Progress is not about the dramatic moments we see. It's about the hundred blows before the rock splits. It's about the five years of underground growth before the bamboo shoots up. It's about showing up day after day, even when we can't see the results yet.
 
-## Best Practices
-
-Always design for failure. Implement circuit breakers, retry logic with exponential backoff, and graceful degradation. Your system should handle failures elegantly rather than cascading them.
-
-Performance testing should be continuous, not a one-time event. Regular load testing helps identify bottlenecks before they become production issues.
-
-## Conclusion
-
-Building scalable applications requires careful planning, continuous monitoring, and iterative improvements. The patterns and practices outlined here have served me well across multiple projects, from small startups to enterprise systems handling millions of requests daily.`,
-    date: "November 15, 2025",
-    readTime: "8 min read",
-    category: "Backend Development",
-    tags: ["ASP.NET Core", "Scalability", "Architecture", "C#"]
+The work is not wasted. It's being stored. And one day, when we least expect it, everything we've been building will reveal itself.`,
+    date: "April 23, 2023",
+    readTime: "3 min read",
+    category: "Personal Growth",
+    tags: ["Growth", "Habits", "Mindset", "Positivity"]
   },
   {
     id: "2",
-    title: "My Journey as a Microsoft Learn Student Ambassador",
-    excerpt: "Reflections on leadership, community impact, and the incredible opportunities that come with being part of the Microsoft Learn Student Ambassador program.",
-    content: `Being a Microsoft Learn Student Ambassador has been one of the most transformative experiences of my university life. It's more than just a title—it's a community, a platform for growth, and an opportunity to make real impact.
+    title: "The Present",
+    excerpt: "Balance lives in the moment. A reflection on bringing ourselves back to the present, removing expectations, and discovering the transformative power of awareness.",
+    coverImage: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&q=80",
+    content: `The world is a classroom to teach us something about ourselves. With every experience I'm learning to ask myself, **"What is this really about? What am I supposed to learn?"**
 
-## Why I Applied
+## Finding Balance in the Moment
 
-I've always been passionate about technology and community. When I discovered the MLSA program, I knew it was the perfect intersection of both. The opportunity to share knowledge, organize events, and connect with like-minded individuals globally was irresistible.
+Every experience is a gift that forces us to move right or left to find a new center of gravity. And balance lives in the moment. When we feel the earth is moving, we need to bring ourselves back to the present. Sometimes we expect much from ourselves, from those we love, from the world, and when these expectations are not met, we are disappointed. Balance lives in the moment. I'm removing any expectations I have of myself and bringing myself back to the now.
 
-The program aligned perfectly with my values: continuous learning, knowledge sharing, and community building. I wanted to be part of something bigger than myself, and the MLSA program provided exactly that platform.
+Oprah Winfrey wrote in the book **'What I Know for Sure'**: "There is no real meaning to life without a spiritual component. And spirit to me is the essence of who we are. It doesn't require any particular belief. And the key to this is simply being aware of the present moment".
 
-## Key Responsibilities
+## The Essence of Being Alive
 
-As an ambassador, my role encompasses several important areas:
+The present is transformative and redefines what it means to be alive. It redefines what it means to live an enlightened healthy existence.
 
-**Organizing Tech Workshops** - I've conducted hands-on sessions on Azure cloud services, GitHub collaboration tools, and modern web development practices. These workshops help demystify technology and make it accessible to everyone.
+When we anchor ourselves in the present moment, we free ourselves from the weight of past regrets and future anxieties. We discover that true peace exists not in achieving perfection, but in accepting where we are right now. The present moment is all we truly have, and it holds infinite possibility for growth, healing, and transformation.
 
-**Mentoring Peers** - One of the most rewarding aspects is helping fellow students navigate their tech journeys. Whether it's career advice, technical guidance, or moral support, being there for others has been incredibly fulfilling.
-
-**Building Community** - Creating spaces for collaboration and learning is at the heart of what I do. From study groups to hackathons, these initiatives bring people together and foster innovation.
-
-**Representing Microsoft** - Sharing Microsoft technologies and tools with my community while gathering feedback helps bridge the gap between students and the tech industry.
-
-## Impact & Growth
-
-The program has helped me develop crucial skills that extend far beyond technology:
-
-**Public speaking and presentation** - From small group sessions to large conferences, I've learned to communicate complex ideas clearly and confidently.
-
-**Event planning and execution** - Understanding logistics, coordinating with stakeholders, and ensuring smooth event delivery are skills I use constantly.
-
-**Technical content creation** - Writing tutorials, creating demos, and producing educational content has sharpened my ability to break down complex topics.
-
-**Community management** - Building and nurturing a community requires empathy, patience, and consistent effort.
-
-**Leadership and mentoring** - These experiences have taught me that leadership is about empowering others, not about being in charge.
-
-## The Ripple Effect
-
-Beyond personal growth, I've witnessed the impact on my community. Students who attended our workshops have gone on to secure internships, launch their own projects, and even become ambassadors themselves. This ripple effect is the true measure of success.
-
-## Advice for Aspiring Ambassadors
-
-If you're considering applying, here's what I've learned:
-
-**Be genuinely passionate** - Your enthusiasm will be your fuel during challenging times. If you love learning and sharing knowledge, you're already halfway there.
-
-**Start small with local events** - You don't need to organize massive conferences from day one. Small workshops and study sessions can be equally impactful.
-
-**Engage actively with the community** - Both the local student community and the global MLSA network. The connections you make will be invaluable.
-
-**Don't be afraid to ask for help** - The MLSA community is incredibly supportive. Everyone started where you are, and they're eager to help.
-
-**Stay consistent and committed** - Impact takes time. Show up consistently, even when it's hard, and you'll see results.
-
-## Conclusion
-
-Being an MLSA has opened doors I never knew existed. From speaking at conferences to connecting with amazing people worldwide, every moment has been worth it. The skills I've gained, the relationships I've built, and the lives I've touched make every challenge worthwhile.
-
-If you have the opportunity to join this incredible program, take the leap—you won't regret it. The journey will transform not just your career, but who you are as a person.`,
-    date: "October 28, 2025",
-    readTime: "6 min read",
-    category: "Community & Leadership",
-    tags: ["Microsoft", "Leadership", "Community", "Career"]
+This awareness becomes our foundation—a place where we can breathe, reset, and move forward with clarity and purpose.`,
+    date: "April 18, 2023",
+    readTime: "1 min read",
+    category: "Mindfulness",
+    tags: ["Mindfulness", "Personal Growth", "Balance", "Presence"]
   },
   {
     id: "3",
-    title: "React Performance Optimization: Tips from the Trenches",
-    excerpt: "Practical techniques and real-world examples for optimizing React applications, from component rendering to state management and beyond.",
-    content: `React is powerful, but as applications grow, performance can become a concern. Here are battle-tested optimization techniques I've learned while building production applications that serve thousands of users daily.
+    title: "Embracing the Unexpected",
+    excerpt: "As 2024 unfolded differently than planned, I discovered valuable lessons about resilience, positivity, and the importance of backing goals with consistent action.",
+    coverImage: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=800&q=80",
+    content: `As the new year unfolded, I envisioned a version of myself committed to early mornings, diving into books, honing skills, and leveling up to a better woman. The start of 2023 seemed promising; I diligently pursued personal growth, establishing a morning routine, embracing hardcopy books instead of softcopy to minimize screen time, incorporating workouts into my life amongst others. Closing the year with a sense of accomplishment, I looked forward to carrying the same momentum into 2024.
 
-## Common Performance Bottlenecks
+Little did I anticipate that January would unfold differently.
 
-**Unnecessary Re-renders** - Components updating when they don't need to is one of the most common performance issues. Every re-render has a cost, and unnecessary ones can quickly add up, especially in component trees with many children.
+## The Valley of Doubt
 
-**Large Bundle Sizes** - Shipping too much JavaScript to the client increases load times and parsing costs. Users on slower connections or devices feel this pain most acutely.
+In the third week of the year, I found myself questioning my own actions, wondering why progress seemed elusive. I grappled with a sense of displacement, a feeling of being ten steps back after moving two steps forward. Worry and fear crept in, stealing my energy and reducing me to tears. One morning I decided to seek refuge in the company of a friend, I shared my struggles, and the encounter became a turning point, offering a renewed sense of strength.
 
-**Inefficient State Management** - Poor state architecture can cause cascade updates where changing one piece of state triggers unnecessary updates throughout your component tree.
+Over the following two weeks, I redirected my focus towards positivity, determined to overcome present challenges and extract valuable lessons. Despite the uncertainties, I maintained hope that things would get better. Here are the valuable lessons I gained and the intentional steps I took to find my way back to the center, regaining control over my life and embracing the unexpected journey that 2024 had laid out before me.
 
-**Heavy Computations** - Expensive operations running on every render can make your UI feel sluggish. Sorting large arrays, filtering data, or complex calculations need careful handling.
+## 1. Pour Yourself Into Positivity
 
-## Optimization Techniques
+Each morning, instead of finding uplifting content, I prioritized social media easily accessible and entertaining to silence my worries, fear and pain. Remember, it is not a solution! The day ends, you have achieved less and the result is more worry. Be intentional with whatever you feed yourself during the low moments, they can either rejuvenate or weaken you.
 
-### Memoization
+**No matter where you are on the pathway of your life, please don't let the pain, fear and stressful worries hinder the glory of your future.** It is wise to remain calm and positive and remember splendid victories and outright blessings are coming your way. Embrace the present and know you're exactly where you need to be to receive the growth you need.
 
-React.memo is your first line of defense against unnecessary re-renders. Wrap components that receive the same props frequently:
+If you feel drained and sense chaos in your life, this is because your fears are a little stronger than your faith. Remind yourself: excuses are seducers, fears are liars and your doubts are thieves. Choose positivity as your guiding light!
 
-\`\`\`typescript
-const ExpensiveComponent = React.memo(({ data }) => {
-  return <div>{/* Complex rendering logic */}</div>;
-});
-\`\`\`
+## 2. Put It Down on Paper
 
-For expensive computations, useMemo ensures they only run when dependencies change:
+Entering 2024 without a clear vision proved challenging. Merely desiring a continuation of the past year wasn't sufficient. I've learned the importance of putting my goals down on paper. Having a tangible record creates a huge shift, reducing the risk of worry. A clear direction allows for gradual progress, bringing a sense of fulfillment and satisfaction. Without a defined vision, we may succumb to fear and worry.
 
-\`\`\`typescript
-const sortedData = useMemo(() => {
-  return data.sort((a, b) => a.value - b.value);
-}, [data]);
-\`\`\`
+## 3. Back Up Your Goals with Application
 
-Similarly, useCallback prevents function recreations that can trigger child component re-renders:
+Intentions and ideas are worth nothing unless they are backed by action. The small implementations you make daily are essential. Make a decision to act on your intentions everyday—achieving small objectives or a module of your work provides motivation. Expecting progress where there is no application leads to frustration.
 
-\`\`\`typescript
-const handleClick = useCallback(() => {
-  processData(id);
-}, [id]);
-\`\`\`
+## Moving Forward
 
-### Code Splitting
+I've come to understand that life's narrative doesn't always follow the script we meticulously write. The unexpected twists, challenges, and moments of self-reflection are integral parts of our personal growth story. As I navigated the uncertainties of January, I discovered that embracing the journey requires a resilient spirit, a commitment to positivity, and a proactive approach to turning aspirations into reality.
 
-Don't make users download code they might never use. Lazy load routes and heavy components:
+By pouring myself into positivity, putting my goals on paper, and backing them with consistent action, I reclaimed control over my narrative. So, as I look ahead to the unwritten chapters of 2024, I am not just a spectator; I am an active participant, ready to embrace whatever twists and turns may come my way, knowing that each unexpected moment is an opportunity for growth and self-discovery.`,
+    date: "February 16, 2024",
+    readTime: "3 min read",
+    category: "Life Lessons",
+    tags: ["Self-Improvement", "Resilience", "Goals", "Positivity"]
+  },
+  {
+    id: "4",
+    title: "Hey Tech Newbies: Some Insights for Beginners",
+    excerpt: "Essential insights for newcomers in tech about mentorship, dealing with pressure, and building your career with patience and persistence.",
+    coverImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+    content: `As a newbie in the tech industry, every single day is an opportunity to learn and re-learn. It is a day to act and make a step or a day to fail, an opportunity to relearn a concept and rise up again. This is my journey thus far, of victories and failures, a whole journey that assures me I'm alive. I'd like to share some insights to fellow newbies in the field that this may guide us as we grow and build our brands in the industry.
 
-\`\`\`typescript
-const AdminPanel = lazy(() => import('./AdminPanel'));
-const ReportsPage = lazy(() => import('./ReportsPage'));
+This week I had a chance to join two spaces discussing mentorship and the pressure on newbies in this industry, and this is what I learnt:
 
-function App() {
-  return (
-    <Suspense fallback={<Loading />}>
-      <Routes>
-        <Route path="/admin" element={<AdminPanel />} />
-        <Route path="/reports" element={<ReportsPage />} />
-      </Routes>
-    </Suspense>
-  );
-}
-\`\`\`
+## Mentorship: Your Growth Catalyst
 
-### Virtual Scrolling
+Mentorship is a developmental relationship where one person helps another make significant positive changes in thinking, knowledge and work. It involves a **mentor** (well-experienced in their field who supports a mentee) and a **mentee** (the one who requires help and support and receives guidance from a mentor).
 
-For large lists (hundreds or thousands of items), render only what's visible. Libraries like react-window make this straightforward:
+### The Numbers Tell a Story
 
-\`\`\`typescript
-import { FixedSizeList } from 'react-window';
+**Stats Kenya** reveals that out of 100 university students, **73 do not receive mentorship** outside of their classrooms. This is shocking, right?
 
-<FixedSizeList
-  height={600}
-  itemCount={items.length}
-  itemSize={50}
-  width="100%"
->
-  {({ index, style }) => (
-    <div style={style}>{items[index]}</div>
-  )}
-</FixedSizeList>
-\`\`\`
+But here's the promising part: **89% of people who receive mentorship proceed to mentor others.** This shows how mentorship matters and creates a positive ripple effect.
 
-### Optimize Context Usage
+### What to Look for in a Mentor
 
-Avoid the "one giant context" anti-pattern. Split contexts by concern and update frequency:
+As we try and find mentors as newbies, this is what we should look for:
 
-\`\`\`typescript
-// Instead of one massive context
-const AppContext = createContext({ user, theme, data, ... });
+**Cheerleader** - Someone to cheer us on and who celebrates with us our small wins everyday is key. Having someone in your corner who genuinely believes in your potential makes all the difference.
 
-// Split into focused contexts
-const UserContext = createContext(user);
-const ThemeContext = createContext(theme);
-const DataContext = createContext(data);
-\`\`\`
+**Resourceful** - One that provides the necessary resources we need to help us grow in the field. Whether it's sharing learning materials, introducing you to opportunities, or connecting you with others in the industry.
 
-This way, components only re-render when their specific context changes.
+**Listener** - Someone who is always ready to listen to what we have to say. A mentor who takes time to understand your challenges, concerns, and aspirations without judgment.
 
-## Measuring Performance
+It is our duty as mentees to face the fears, engage our mentors actively, and grow/make small milestones each day. The relationship works best when both parties are committed.
 
-Never optimize blindly. Always measure first:
+## Dealing with Pressure
 
-**React DevTools Profiler** - Record interactions and see which components render, how often, and why. This tool is invaluable for identifying problem areas.
+As newbies we get so much pressure. Everyone has their reason as to why they joined this industry—be it the love and passion like me, money for others, or any other reason. Here are the advices I got on handling pressure in tech:
 
-**Lighthouse** - Run audits to get overall performance metrics and actionable recommendations. Pay special attention to Time to Interactive and First Contentful Paint.
+### Understanding the Journey
 
-**Web Vitals** - Track Core Web Vitals (LCP, FID, CLS) in production. These metrics directly correlate with user experience.
+**This is a career and it takes time** to build knowledge and skills. Tech is an ambiguous and dynamic industry with demand on the rise. There is pressure to deliver and to get somewhere, but rushing the process often leads to burnout.
 
-**Chrome DevTools Performance Tab** - Record runtime performance to identify JavaScript execution bottlenecks and layout thrashing.
+**The industry experts we admire did not win in a day.** They've toiled to be where they are. Each one of them has their own journey, so we also have to own our individual journeys. Comparison is the thief of joy—focus on your own progress.
 
-## Real-World Results
+### Keys to Success
 
-In a recent e-commerce project I worked on, applying these techniques yielded impressive improvements:
+**Join with an open mind** - Appreciate your journey, trust the process, start somewhere and use it as a stepping stone to get to where you want to be.
 
-- Bundle size reduced by 40% through code splitting and tree shaking
-- First Contentful Paint improved by 2.3 seconds
-- Time to Interactive decreased by 1.8 seconds
-- Lighthouse performance score jumped from 62 to 94
-- User satisfaction scores improved significantly
+**Giving up is not an option** to take. It's about zeal, giving yourself motivation and just playing your cards right. Everything is doable and so let's master the skills and learn everyday.
 
-The key was systematic measurement, targeted optimization, and validation. We didn't try to optimize everything at once; we identified the biggest bottlenecks and addressed them methodically.
+**Build gradually** - You don't need to know everything at once. Master the fundamentals, then layer on complexity as you grow. Each small win builds your confidence and competence.
 
-## Additional Tips
+**Find your community** - Connect with other learners. Share struggles, celebrate wins together, and learn from each other's experiences. You're not alone in this journey.
 
-**Debounce expensive operations** - For search inputs or resize handlers, debounce to prevent excessive calls.
+## Final Thoughts
 
-**Use production builds** - Development builds are significantly slower. Always test performance with production builds.
+The tech industry can feel overwhelming, especially at the beginning. But remember: every expert was once a beginner. Every person you admire struggled with imposter syndrome, failed at something, and had moments of doubt.
 
-**Optimize images** - Use modern formats (WebP, AVIF), implement lazy loading, and serve appropriately sized images.
+What sets successful people apart isn't raw talent—it's persistence, continuous learning, and the willingness to keep showing up even when it's hard.
 
-**Avoid inline object/array literals** - Creating new objects in render causes unnecessary re-renders of memoized children.
+I hope these insights help us all as we work on building our careers in tech. Let's support each other, celebrate our progress, and remember that slow progress is still progress. All the best!
 
-## Conclusion
-
-Performance optimization is an ongoing process, not a one-time task. Start with measuring to establish baselines, identify bottlenecks using profiling tools, apply targeted optimizations, and always validate improvements with real metrics.
-
-Remember: premature optimization is the root of all evil, but so is ignoring performance until it's a crisis. Build with performance in mind from the start, measure regularly, and optimize when data shows it's needed.
-
-The techniques outlined here have served me well across numerous production applications. Apply them judiciously, and your users will thank you with better engagement and satisfaction scores.`,
-    date: "November 10, 2025",
-    readTime: "10 min read",
-    category: "Frontend Development",
-    tags: ["React", "Performance", "JavaScript", "Web Development"]
+**Your journey is valid. Your pace is perfect. Keep going.**`,
+    date: "November 11, 2022",
+    readTime: "3 min read",
+    category: "Career Advice",
+    tags: ["Web Development", "Mentorship", "Career Growth", "Beginners"]
   }
 ];
