@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import { Code, Globe, ArrowRight, Mail } from "lucide-react";
 import profilePic from "@/assets/cha1.jpg";
+import ParticleBackground from "@/components/ParticleBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen font-sans bg-background flex items-center justify-center py-8 px-4">
+    <div className="min-h-screen font-sans bg-background flex items-center justify-center py-8 px-4 relative">
+      <ParticleBackground />
       
       {/* Hero Section */}
-      <section className="w-full max-w-4xl mx-auto">
+      <section className="w-full max-w-4xl mx-auto relative z-10">
         <div className="text-center space-y-6 md:space-y-8">
           {/* Main Title */}
           <div className="space-y-2">
