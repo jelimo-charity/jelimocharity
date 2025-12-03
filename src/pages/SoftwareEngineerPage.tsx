@@ -396,15 +396,15 @@ const SoftwareEngineerPage = () => {
           <div className="flex items-center justify-between">
             <div>
               <Link to="/" className="text-secondary hover:text-primary transition-colors">
-                hello@jelimocharity.com
+                jelimocharity
               </Link>
             </div>
             <div className="flex items-center gap-6 text-sm">
               <Link to="/software-engineer" className="text-primary font-medium">
-                Software Dev
+                Portfolio
               </Link>
               <Link to="/articles" className="text-secondary hover:text-primary transition-colors">
-                Writings
+                Blogs
               </Link>
             </div>
           </div>
