@@ -1,12 +1,37 @@
 import { Link } from "react-router-dom";
-import { Code, Globe, ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Moon, Sun } from "lucide-react";
+import { useState, useEffect } from "react";
 import profilePic from "@/assets/cha1.jpg";
 import ParticleBackground from "@/components/ParticleBackground";
 
 const Index = () => {
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' || 'dark';
+    setTheme(savedTheme);
+    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+  };
+
   return (
     <div className="min-h-screen font-sans bg-background flex items-center justify-center py-8 px-4 relative">
       <ParticleBackground />
+      
+      {/* Theme Switcher - Top Right */}
+      <button
+        onClick={toggleTheme}
+        className="fixed top-6 right-6 z-50 p-3 rounded-full border border-border bg-card hover:border-primary hover:bg-primary/5 transition-all shadow-lg"
+        aria-label="Toggle theme"
+      >
+        {theme === 'dark' ? <Moon size={20} className="text-accent" /> : <Sun size={20} className="text-accent" />}
+      </button>
       
       {/* Hero Section */}
       <section className="w-full max-w-4xl mx-auto relative z-10">
@@ -37,44 +62,35 @@ const Index = () => {
             </p>
           </div> */}
 
-          {/* Navigation Links */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 pt-4">
+          {/* Navigation Links - Sleek Pill-Shaped Buttons */}
+          <div className="flex flex-col sm:flex-row items-stretch justify-center gap-3 pt-6 max-w-2xl mx-auto">
             <Link 
               to="/software-engineer" 
-              className="group p-6 md:p-8 border border-border rounded-lg hover:border-primary hover:shadow-lg transition-all bg-card"
+              className="group relative w-full sm:flex-1 px-8 py-7 border-2 border-border rounded-2xl hover:border-primary hover:bg-primary/5 transition-all text-center flex items-center justify-center"
             >
-              <Code className="h-8 w-8 md:h-10 md:w-10 text-secondary mb-3 md:mb-4 mx-auto group-hover:text-primary transition-colors" />
-              <h3 className="font-medium text-accent mb-2 text-base md:text-lg">Software Development</h3>
-              <p className="text-xs md:text-sm text-secondary mb-3 md:mb-4">Experience, mentorship & career achievements</p>
-              <div className="flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
-                <span className="text-xs">Explore</span>
-                <ArrowRight className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" />
+              <div className="flex items-center justify-center gap-2">
+                <span className="font-medium text-accent text-base group-hover:text-primary transition-colors whitespace-nowrap">Work Portfolio</span>
+                <ArrowRight className="h-4 w-4 text-secondary group-hover:text-primary group-hover:translate-x-1 transition-all" />
               </div>
             </Link>
 
             <Link 
               to="/articles" 
-              className="group p-6 md:p-8 border border-border rounded-lg hover:border-primary hover:shadow-lg transition-all bg-card"
+              className="group relative w-full sm:flex-1 px-8 py-7 border-2 border-border rounded-2xl hover:border-primary hover:bg-primary/5 transition-all text-center flex items-center justify-center"
             >
-              <Globe className="h-8 w-8 md:h-10 md:w-10 text-secondary mb-3 md:mb-4 mx-auto group-hover:text-primary transition-colors" />
-              <h3 className="font-medium text-accent mb-2 text-base md:text-lg">Writing and Reflections</h3>
-              <p className="text-xs md:text-sm text-secondary mb-3 md:mb-4">Stories, Learnings & Perspectives</p>
-              <div className="flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
-                <span className="text-xs">Explore</span>
-                <ArrowRight className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" />
+              <div className="flex items-center justify-center gap-2">
+                <span className="font-medium text-accent text-base group-hover:text-primary transition-colors whitespace-nowrap">My Voice</span>
+                <ArrowRight className="h-4 w-4 text-secondary group-hover:text-primary group-hover:translate-x-1 transition-all" />
               </div>
             </Link>
 
             <a 
-              href="mailto:your.email@example.com" 
-              className="group p-6 md:p-8 border border-border rounded-lg hover:border-primary hover:shadow-lg transition-all bg-card"
+              href="mailto:charityjelimo893@gmail.com" 
+              className="group relative w-full sm:flex-1 px-8 py-7 border-2 border-border rounded-2xl hover:border-primary hover:bg-primary/5 transition-all text-center flex items-center justify-center"
             >
-              <Mail className="h-8 w-8 md:h-10 md:w-10 text-secondary mb-3 md:mb-4 mx-auto group-hover:text-primary transition-colors" />
-              <h3 className="font-medium text-accent mb-2 text-base md:text-lg">Connect</h3>
-              <p className="text-xs md:text-sm text-secondary mb-3 md:mb-4">Get in touch</p>
-              <div className="flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
-                <span className="text-xs">Email</span>
-                <ArrowRight className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" />
+              <div className="flex items-center justify-center gap-2">
+                <span className="font-medium text-accent text-base group-hover:text-primary transition-colors whitespace-nowrap">Get in touch</span>
+                <ArrowRight className="h-4 w-4 text-secondary group-hover:text-primary group-hover:translate-x-1 transition-all" />
               </div>
             </a>
           </div>

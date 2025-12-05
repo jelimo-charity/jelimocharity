@@ -1,16 +1,102 @@
 ﻿import { Link } from "react-router-dom";
-import { useState } from "react";
-import chao from "@/assets/chao.jpg";
-import chakamsit from "@/assets/chakamsit.jpg";
-import cha from "@/assets/cha.jpg";
-import dsc1 from "@/assets/DSC_2757.jpg";
-import dsc2 from "@/assets/DSC_7285.jpg";
+import { useState, useEffect } from "react";
+import { Moon, Sun } from "lucide-react";
 
 const SoftwareEngineerPage = () => {
   const [activeTab, setActiveTab] = useState("experience");
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' || 'dark';
+    setTheme(savedTheme);
+    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+  };
 
   const renderContent = () => {
     switch (activeTab) {
+      case "projects":
+        return (
+          <div className="space-y-8">
+            <h2 className="text-3xl font-light text-accent mb-8 text-center">Projects & Work</h2>
+            
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {/* Project 1 */}
+              <div className="bg-card border border-border rounded-lg p-6 space-y-4 hover:border-primary transition-all">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-medium text-accent">Car Rental Application</h3>
+                  <p className="text-xs text-muted-foreground">Full-stack Development · 2024</p>
+                </div>
+                <p className="text-secondary text-sm leading-relaxed">
+                  Developed a comprehensive car rental platform using React, TypeScript, PostgreSQL, and Hono (Node.js). Implemented features for vehicle management, booking systems, and user authentication with a focus on scalability and performance.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">React</span>
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">TypeScript</span>
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">PostgreSQL</span>
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Drizzle ORM</span>
+                </div>
+              </div>
+
+              {/* Project 2 */}
+              <div className="bg-card border border-border rounded-lg p-6 space-y-4 hover:border-primary transition-all">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-medium text-accent">Portfolio Website</h3>
+                  <p className="text-xs text-muted-foreground">Web Development · 2025</p>
+                </div>
+                <p className="text-secondary text-sm leading-relaxed">
+                  Built a modern portfolio and blog platform featuring dynamic content management, responsive design, and optimized performance. Integrated Supabase for backend services and authentication.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">React</span>
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Vite</span>
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Supabase</span>
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">TailwindCSS</span>
+                </div>
+              </div>
+
+              {/* Project 3 */}
+              <div className="bg-card border border-border rounded-lg p-6 space-y-4 hover:border-primary transition-all">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-medium text-accent">Enterprise Solutions</h3>
+                  <p className="text-xs text-muted-foreground">GRIFFIN Global Technologies · 2024-2025</p>
+                </div>
+                <p className="text-secondary text-sm leading-relaxed">
+                  Contributed to enterprise-level applications using ASP.NET Core and Microsoft Azure. Implemented RESTful APIs, database optimizations, and DevOps practices for continuous integration and deployment.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">ASP.NET Core</span>
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Azure</span>
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">SQL Server</span>
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Docker</span>
+                </div>
+              </div>
+
+              {/* Project 4 */}
+              <div className="bg-card border border-border rounded-lg p-6 space-y-4 hover:border-primary transition-all">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-medium text-accent">Tech Community Projects</h3>
+                  <p className="text-xs text-muted-foreground">Microsoft Learn Student Ambassador · 2023-2024</p>
+                </div>
+                <p className="text-secondary text-sm leading-relaxed">
+                  Led and contributed to various technical projects and hackathons, organizing workshops and study groups. Developed educational content and demos to promote Microsoft technologies and best practices.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Azure</span>
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Power BI</span>
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">GitHub</span>
+                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Community Building</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
       case "experience":
         return (
           <div className="space-y-8">
@@ -163,13 +249,13 @@ const SoftwareEngineerPage = () => {
           <div className="space-y-10">
             <h2 className="text-3xl font-light text-accent mb-8 text-center">Skills & Technologies</h2>
             
-            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {/* Technical Skills Column */}
-              <div className="space-y-8">
-                <div className="bg-card border border-border rounded-lg p-6 space-y-6">
-                  <h3 className="text-xl font-medium text-primary border-b border-border pb-3">Technical Skills</h3>
-                  
-                  <div className="space-y-5">
+            <div className="max-w-6xl mx-auto">
+              <div className="bg-card border border-border rounded-lg p-6 space-y-6">
+                <h3 className="text-xl font-medium text-primary border-b border-border pb-3">All Skills</h3>
+                
+                <div className="space-y-5">
+                  {/* Row 1: Programming Languages & Databases */}
+                  <div className="grid md:grid-cols-2 gap-5">
                     <div>
                       <p className="text-sm text-accent mb-2 font-medium">Programming Languages</p>
                       <div className="flex flex-wrap gap-2">
@@ -181,18 +267,6 @@ const SoftwareEngineerPage = () => {
                     </div>
 
                     <div>
-                      <p className="text-sm text-accent mb-2 font-medium">Frameworks & Libraries</p>
-                      <div className="flex flex-wrap gap-2">
-                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">ASP.NET Core</span>
-                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">React.js</span>
-                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Node.js</span>
-                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Express.js</span>
-                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">AngularJS</span>
-                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Redux.js</span>
-                      </div>
-                    </div>
-
-                    <div>
                       <p className="text-sm text-accent mb-2 font-medium">Databases & ORMs</p>
                       <div className="flex flex-wrap gap-2">
                         <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">PostgreSQL</span>
@@ -200,7 +274,23 @@ const SoftwareEngineerPage = () => {
                         <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Drizzle ORM</span>
                       </div>
                     </div>
+                  </div>
 
+                  {/* Row 2: Frameworks & Libraries (Full Width) */}
+                  <div>
+                    <p className="text-sm text-accent mb-2 font-medium">Frameworks & Libraries</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">ASP.NET Core</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">React.js</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Node.js</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Express.js</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">AngularJS</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Redux.js</span>
+                    </div>
+                  </div>
+
+                  {/* Row 3: Cloud & DevOps, Tools & Platforms */}
+                  <div className="grid md:grid-cols-2 gap-5">
                     <div>
                       <p className="text-sm text-accent mb-2 font-medium">Cloud & DevOps</p>
                       <div className="flex flex-wrap gap-2">
@@ -222,12 +312,9 @@ const SoftwareEngineerPage = () => {
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="bg-card border border-border rounded-lg p-6 space-y-6">
-                  <h3 className="text-xl font-medium text-primary border-b border-border pb-3">Specialized Skills</h3>
-                  
-                  <div className="space-y-5">
+                  {/* Row 4: Development Practices, AI & Data Science */}
+                  <div className="grid md:grid-cols-2 gap-5">
                     <div>
                       <p className="text-sm text-accent mb-2 font-medium">Development Practices</p>
                       <div className="flex flex-wrap gap-2">
@@ -246,76 +333,44 @@ const SoftwareEngineerPage = () => {
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
 
-              {/* Soft Skills Column */}
-              <div className="space-y-8">
-                <div className="bg-card border border-border rounded-lg p-6 space-y-6">
-                  <h3 className="text-xl font-medium text-primary border-b border-border pb-3">Leadership & Soft Skills</h3>
-                  
-                  <div className="grid grid-cols-2 gap-3">
-                    {[
-                      'Communication',
-                      'Leadership',
-                      'Project Management',
-                      'Teamwork',
-                      'Mentoring',
-                      'Public Speaking',
-                      'Technical Writing',
-                      'Problem Solving'
-                    ].map((skill) => (
-                      <div key={skill} className="flex items-center gap-2 px-3 py-2 bg-background border border-primary/20 rounded-md hover:border-primary/50 transition-colors">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                        <span className="text-sm text-secondary">{skill}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="bg-card border border-border rounded-lg p-6 space-y-6">
-                  <h3 className="text-xl font-medium text-primary border-b border-border pb-3">Professional Development</h3>
-                  
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                      <div>
-                        <p className="text-sm text-accent font-medium">Community Engagement</p>
-                        <p className="text-xs text-muted-foreground">Active participation in tech communities</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                      <div>
-                        <p className="text-sm text-accent font-medium">Personal Branding</p>
-                        <p className="text-xs text-muted-foreground">Building professional online presence</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                      <div>
-                        <p className="text-sm text-accent font-medium">Innovation & Creativity</p>
-                        <p className="text-xs text-muted-foreground">Design thinking and problem-solving</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                      <div>
-                        <p className="text-sm text-accent font-medium">Continuous Learning</p>
-                        <p className="text-xs text-muted-foreground">Always exploring new technologies</p>
-                      </div>
+                  {/* Row 5: Leadership & Soft Skills (Full Width) */}
+                  <div>
+                    <p className="text-sm text-accent mb-2 font-medium">Leadership & Soft Skills</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Communication</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Leadership</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Project Management</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Teamwork</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Mentoring</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Public Speaking</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Technical Writing</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Problem Solving</span>
                     </div>
                   </div>
-                </div>
 
-                <div className="bg-card border border-border rounded-lg p-6 space-y-4">
-                  <h3 className="text-xl font-medium text-primary border-b border-border pb-3">Additional Skills</h3>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Interview Prep</span>
-                    <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Resume Writing</span>
-                    <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Pitching Ideas</span>
-                    <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Entrepreneurship</span>
-                    <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Mobile Apps</span>
+                  {/* Row 6: Professional Development & Additional Skills */}
+                  <div className="grid md:grid-cols-2 gap-5">
+                    <div>
+                      <p className="text-sm text-accent mb-2 font-medium">Professional Development</p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Community Engagement</span>
+                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Personal Branding</span>
+                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Innovation & Creativity</span>
+                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Continuous Learning</span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="text-sm text-accent mb-2 font-medium">Additional Skills</p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Interview Prep</span>
+                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Resume Writing</span>
+                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Pitching Ideas</span>
+                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Entrepreneurship</span>
+                        <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs text-secondary">Mobile Apps</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -359,28 +414,6 @@ const SoftwareEngineerPage = () => {
                 </p>
               </div>
             </div>
-
-            {/* Photo Gallery */}
-            <div className="max-w-6xl mx-auto">
-              <h3 className="text-2xl font-light text-accent mb-6 text-center">Moments Along The Way</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div className="overflow-hidden rounded-lg border border-border hover:border-primary transition-all">
-                  <img src={chao} alt="Journey moment" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" />
-                </div>
-                <div className="overflow-hidden rounded-lg border border-border hover:border-primary transition-all">
-                  <img src={chakamsit} alt="Journey moment" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" />
-                </div>
-                <div className="overflow-hidden rounded-lg border border-border hover:border-primary transition-all">
-                  <img src={cha} alt="Journey moment" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" />
-                </div>
-                <div className="overflow-hidden rounded-lg border border-border hover:border-primary transition-all">
-                  <img src={dsc1} alt="Journey moment" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" />
-                </div>
-                <div className="overflow-hidden rounded-lg border border-border hover:border-primary transition-all">
-                  <img src={dsc2} alt="Journey moment" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" />
-                </div>
-              </div>
-            </div>
           </div>
         );
       default:
@@ -406,6 +439,13 @@ const SoftwareEngineerPage = () => {
               <Link to="/articles" className="text-secondary hover:text-primary transition-colors">
                 Blogs
               </Link>
+              <button
+                onClick={toggleTheme}
+                className="text-secondary hover:text-primary transition-colors p-1.5 hover:bg-accent/10 rounded-md"
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? <Moon size={18} /> : <Sun size={18} />}
+              </button>
             </div>
           </div>
         </div>
@@ -413,21 +453,32 @@ const SoftwareEngineerPage = () => {
 
       <nav className="mt-8">
         <div className="container mx-auto px-6 max-w-6xl">
-          <div className="flex gap-8">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 sm:gap-x-8">
             <button
               onClick={() => setActiveTab("experience")}
-              className={`py-3 px-1 border-b-2 transition-colors ${
+              className={`py-2 sm:py-3 px-1 border-b-2 transition-colors text-sm sm:text-base ${
                 activeTab === "experience"
                   ? "border-primary text-primary font-medium"
                   : "border-transparent text-muted-foreground hover:text-foreground"
               }`}
             >
-              Experience & Work
+              Experience
+            </button>
+            
+            <button
+              onClick={() => setActiveTab("projects")}
+              className={`py-2 sm:py-3 px-1 border-b-2 transition-colors text-sm sm:text-base ${
+                activeTab === "projects"
+                  ? "border-primary text-primary font-medium"
+                  : "border-transparent text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Projects
             </button>
             
             <button
               onClick={() => setActiveTab("achievements")}
-              className={`py-3 px-1 border-b-2 transition-colors ${
+              className={`py-2 sm:py-3 px-1 border-b-2 transition-colors text-sm sm:text-base ${
                 activeTab === "achievements"
                   ? "border-primary text-primary font-medium"
                   : "border-transparent text-muted-foreground hover:text-foreground"
@@ -438,7 +489,7 @@ const SoftwareEngineerPage = () => {
             
             <button
               onClick={() => setActiveTab("skills")}
-              className={`py-3 px-1 border-b-2 transition-colors ${
+              className={`py-2 sm:py-3 px-1 border-b-2 transition-colors text-sm sm:text-base ${
                 activeTab === "skills"
                   ? "border-primary text-primary font-medium"
                   : "border-transparent text-muted-foreground hover:text-foreground"
@@ -449,13 +500,13 @@ const SoftwareEngineerPage = () => {
             
             <button
               onClick={() => setActiveTab("journey")}
-              className={`py-3 px-1 border-b-2 transition-colors ${
+              className={`py-2 sm:py-3 px-1 border-b-2 transition-colors text-sm sm:text-base ${
                 activeTab === "journey"
                   ? "border-primary text-primary font-medium"
                   : "border-transparent text-muted-foreground hover:text-foreground"
               }`}
             >
-              My Story & Journey
+              My Story
             </button>
           </div>
         </div>
