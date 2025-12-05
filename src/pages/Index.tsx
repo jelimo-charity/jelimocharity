@@ -21,7 +21,15 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-background flex items-center justify-center py-8 px-4 relative">
+    <div className="min-h-screen font-sans bg-background flex items-center justify-center py-8 px-4 relative overflow-hidden">
+      {/* Enhanced light mode background with gradient mesh */}
+      <div className="dark:block hidden absolute inset-0 bg-gradient-to-br from-[hsl(45,35%,95%)] via-[hsl(42,30%,96%)] to-[hsl(38,25%,94%)]" />
+      <div className="dark:block hidden absolute inset-0 opacity-30">
+        <div className="absolute top-0 -left-4 w-96 h-96 bg-gradient-to-br from-[hsl(43,74%,70%)] to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-0 w-96 h-96 bg-gradient-to-bl from-[hsl(38,70%,65%)] to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-gradient-to-tr from-[hsl(40,60%,75%)] to-transparent rounded-full blur-3xl" />
+      </div>
+      
       <ParticleBackground />
       
       {/* Theme Switcher - Top Right */}

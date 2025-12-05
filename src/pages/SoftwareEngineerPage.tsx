@@ -1,10 +1,20 @@
 ﻿import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, ExternalLink, Github, X } from "lucide-react";
+import smartphoneImg from "@/assets/smartphone.jpg";
+import foodfilterImg from "@/assets/foodfilter.jpg";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const SoftwareEngineerPage = () => {
   const [activeTab, setActiveTab] = useState("experience");
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' || 'dark';
@@ -24,77 +34,250 @@ const SoftwareEngineerPage = () => {
       case "projects":
         return (
           <div className="space-y-8">
-            <h2 className="text-3xl font-light text-accent mb-8 text-center">Projects & Work</h2>
+            <h2 className="text-3xl font-light text-accent mb-8 text-center">Featured Projects</h2>
             
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              {/* Project 1 */}
-              <div className="bg-card border border-border rounded-lg p-6 space-y-4 hover:border-primary transition-all">
-                <div className="space-y-2">
-                  <h3 className="text-lg font-medium text-accent">Car Rental Application</h3>
-                  <p className="text-xs text-muted-foreground">Full-stack Development · 2024</p>
+            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {/* Project 1: Smartphone Usage Analysis */}
+              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary transition-all hover:shadow-xl group">
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={smartphoneImg} 
+                    alt="Smartphone Usage Analysis" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
                 </div>
-                <p className="text-secondary text-sm leading-relaxed">
-                  Developed a comprehensive car rental platform using React, TypeScript, PostgreSQL, and Hono (Node.js). Implemented features for vehicle management, booking systems, and user authentication with a focus on scalability and performance.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">React</span>
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">TypeScript</span>
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">PostgreSQL</span>
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Drizzle ORM</span>
+                <div className="p-6 space-y-4">
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-medium text-accent">Smartphone Usage Analysis</h3>
+                    <p className="text-sm text-muted-foreground">Data Science · Python · 2024</p>
+                  </div>
+                  <p className="text-secondary text-sm leading-relaxed">
+                    Comprehensive analysis of mobile device usage patterns and user behavior. Utilized Python, Pandas, and data visualization libraries to extract insights from usage data.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Python</span>
+                    <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Pandas</span>
+                    <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Jupyter</span>
+                    <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Data Viz</span>
+                  </div>
+                  <div className="flex gap-3 pt-2">
+                    <a 
+                      href="https://github.com/jelimo-charity/smartphone-usage-analysis"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 px-4 py-2 bg-background border border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all text-sm text-secondary"
+                    >
+                      <Github className="w-4 h-4" />
+                      GitHub
+                    </a>
+                    <a 
+                      href="https://colab.research.google.com/github/jelimo-charity/smartphone-usage-analysis/blob/main/Mobile_device_usage_and_user_behaviour.ipynb"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 px-4 py-2 bg-background border border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all text-sm text-secondary"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Colab
+                    </a>
+                    <button 
+                      onClick={() => setSelectedProject('smartphone')}
+                      className="flex items-center gap-1.5 px-4 py-2 bg-primary/10 border border-primary rounded-lg hover:bg-primary/20 transition-all text-sm text-accent font-medium"
+                    >
+                      View Details
+                    </button>
+                  </div>
                 </div>
               </div>
 
-              {/* Project 2 */}
-              <div className="bg-card border border-border rounded-lg p-6 space-y-4 hover:border-primary transition-all">
-                <div className="space-y-2">
-                  <h3 className="text-lg font-medium text-accent">Portfolio Website</h3>
-                  <p className="text-xs text-muted-foreground">Web Development · 2025</p>
+              {/* Project 2: Food Filtering App */}
+              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary transition-all hover:shadow-xl group">
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={foodfilterImg} 
+                    alt="Food Filtering Application" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
                 </div>
-                <p className="text-secondary text-sm leading-relaxed">
-                  Built a modern portfolio and blog platform featuring dynamic content management, responsive design, and optimized performance. Integrated Supabase for backend services and authentication.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">React</span>
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Vite</span>
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Supabase</span>
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">TailwindCSS</span>
-                </div>
-              </div>
-
-              {/* Project 3 */}
-              <div className="bg-card border border-border rounded-lg p-6 space-y-4 hover:border-primary transition-all">
-                <div className="space-y-2">
-                  <h3 className="text-lg font-medium text-accent">Enterprise Solutions</h3>
-                  <p className="text-xs text-muted-foreground">GRIFFIN Global Technologies · 2024-2025</p>
-                </div>
-                <p className="text-secondary text-sm leading-relaxed">
-                  Contributed to enterprise-level applications using ASP.NET Core and Microsoft Azure. Implemented RESTful APIs, database optimizations, and DevOps practices for continuous integration and deployment.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">ASP.NET Core</span>
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Azure</span>
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">SQL Server</span>
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Docker</span>
-                </div>
-              </div>
-
-              {/* Project 4 */}
-              <div className="bg-card border border-border rounded-lg p-6 space-y-4 hover:border-primary transition-all">
-                <div className="space-y-2">
-                  <h3 className="text-lg font-medium text-accent">Tech Community Projects</h3>
-                  <p className="text-xs text-muted-foreground">Microsoft Learn Student Ambassador · 2023-2024</p>
-                </div>
-                <p className="text-secondary text-sm leading-relaxed">
-                  Led and contributed to various technical projects and hackathons, organizing workshops and study groups. Developed educational content and demos to promote Microsoft technologies and best practices.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Azure</span>
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Power BI</span>
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">GitHub</span>
-                  <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Community Building</span>
+                <div className="p-6 space-y-4">
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-medium text-accent">Food Filtering Application</h3>
+                    <p className="text-sm text-muted-foreground">Full-stack Development · React · 2024</p>
+                  </div>
+                  <p className="text-secondary text-sm leading-relaxed">
+                    Interactive web application for filtering and discovering food options. Built with modern React, featuring dynamic filtering, responsive design, and intuitive user experience.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">React</span>
+                    <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">TypeScript</span>
+                    <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">TailwindCSS</span>
+                    <span className="px-2 py-1 bg-background border border-primary/30 rounded text-xs text-secondary">Vercel</span>
+                  </div>
+                  <div className="flex gap-3 pt-2">
+                    <a 
+                      href="https://github.com/jelimo-charity/food-filtering-app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 px-4 py-2 bg-background border border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all text-sm text-secondary"
+                    >
+                      <Github className="w-4 h-4" />
+                      GitHub
+                    </a>
+                    <a 
+                      href="https://food-filtering-app.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 px-4 py-2 bg-background border border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all text-sm text-secondary"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Live Site
+                    </a>
+                    <button 
+                      onClick={() => setSelectedProject('foodfilter')}
+                      className="flex items-center gap-1.5 px-4 py-2 bg-primary/10 border border-primary rounded-lg hover:bg-primary/20 transition-all text-sm text-accent font-medium"
+                    >
+                      View Details
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
+
+            {/* Project Modals */}
+            <Dialog open={selectedProject === 'smartphone'} onOpenChange={() => setSelectedProject(null)}>
+              <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto bg-card border-border">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl text-accent">Smartphone Usage Analysis</DialogTitle>
+                  <DialogDescription className="text-muted-foreground">
+                    Data Science Project · Python, Pandas, Jupyter Notebook
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-6">
+                  <div className="relative h-72 rounded-lg overflow-hidden">
+                    <img 
+                      src={smartphoneImg} 
+                      alt="Smartphone Usage Analysis" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="space-y-4 text-secondary">
+                    <h3 className="text-lg font-medium text-accent">Project Overview</h3>
+                    <p className="leading-relaxed">
+                      This project presents a comprehensive analysis of mobile device usage patterns and user behavior. Using real-world data, the analysis explores how users interact with their smartphones, including app usage frequency, screen time patterns, and behavioral insights.
+                    </p>
+                    
+                    <h3 className="text-lg font-medium text-accent pt-2">Key Features</h3>
+                    <ul className="list-disc list-inside space-y-2 leading-relaxed">
+                      <li>Exploratory Data Analysis (EDA) of smartphone usage metrics</li>
+                      <li>Interactive visualizations using Matplotlib and Seaborn</li>
+                      <li>Statistical analysis of user behavior patterns</li>
+                      <li>Time-series analysis of app usage trends</li>
+                      <li>Insights into user engagement and device interaction</li>
+                    </ul>
+
+                    <h3 className="text-lg font-medium text-accent pt-2">Technologies Used</h3>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs">Python</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs">Pandas</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs">NumPy</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs">Matplotlib</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs">Seaborn</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs">Jupyter Notebook</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs">Google Colab</span>
+                    </div>
+
+                    <div className="flex gap-3 pt-4">
+                      <a 
+                        href="https://github.com/jelimo-charity/smartphone-usage-analysis"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-5 py-2.5 bg-background border border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all font-medium"
+                      >
+                        <Github className="w-5 h-5" />
+                        View on GitHub
+                      </a>
+                      <a 
+                        href="https://colab.research.google.com/github/jelimo-charity/smartphone-usage-analysis/blob/main/Mobile_device_usage_and_user_behaviour.ipynb"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-5 py-2.5 bg-primary/10 border border-primary rounded-lg hover:bg-primary/20 transition-all text-accent font-medium"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                        Open in Google Colab
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog open={selectedProject === 'foodfilter'} onOpenChange={() => setSelectedProject(null)}>
+              <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto bg-card border-border">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl text-accent">Food Filtering Application</DialogTitle>
+                  <DialogDescription className="text-muted-foreground">
+                    Full-stack Web Application · React, TypeScript, TailwindCSS
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-6">
+                  <div className="relative h-72 rounded-lg overflow-hidden">
+                    <img 
+                      src={foodfilterImg} 
+                      alt="Food Filtering Application" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="space-y-4 text-secondary">
+                    <h3 className="text-lg font-medium text-accent">Project Overview</h3>
+                    <p className="leading-relaxed">
+                      A modern, responsive web application designed to help users discover and filter food options based on various criteria. The application features an intuitive interface, real-time filtering capabilities, and smooth animations for an enhanced user experience.
+                    </p>
+                    
+                    <h3 className="text-lg font-medium text-accent pt-2">Key Features</h3>
+                    <ul className="list-disc list-inside space-y-2 leading-relaxed">
+                      <li>Dynamic filtering system with multiple criteria</li>
+                      <li>Responsive design optimized for all device sizes</li>
+                      <li>Modern UI with smooth animations and transitions</li>
+                      <li>Fast performance with optimized React components</li>
+                      <li>Clean and maintainable code architecture</li>
+                      <li>Deployed on Vercel with continuous integration</li>
+                    </ul>
+
+                    <h3 className="text-lg font-medium text-accent pt-2">Technologies Used</h3>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs">React</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs">TypeScript</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs">TailwindCSS</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs">Vite</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs">Vercel</span>
+                      <span className="px-3 py-1.5 bg-background border border-primary/50 rounded-md text-xs">Git</span>
+                    </div>
+
+                    <div className="flex gap-3 pt-4">
+                      <a 
+                        href="https://github.com/jelimo-charity/food-filtering-app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-5 py-2.5 bg-background border border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all font-medium"
+                      >
+                        <Github className="w-5 h-5" />
+                        View on GitHub
+                      </a>
+                      <a 
+                        href="https://food-filtering-app.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-5 py-2.5 bg-primary/10 border border-primary rounded-lg hover:bg-primary/20 transition-all text-accent font-medium"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                        Visit Live Site
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         );
       case "experience":

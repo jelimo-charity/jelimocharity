@@ -63,8 +63,8 @@
 
   .dark {
     /* Light mode - warm elegant theme with black text and gold titles */
-    /* Background: Soft warm cream */
-    --background: 40 25% 97%;
+    /* Background: Soft gradient from warm cream to light gold */
+    --background: 42 30% 96%;
     --foreground: 0 0% 5%;
 
     /* Cards: Pure white for contrast */
